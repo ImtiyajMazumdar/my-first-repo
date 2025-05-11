@@ -1,0 +1,669 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+    <title>OSAPS Login - Bangladesh Open University (BOU)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword" content="Bangladesh Open University, BOU, OSAPS Login, Authentication, Student Login, Official Login">
+    <link rel="shortcut icon" href="https://bou.ac.bd/fontend/images/favi.jpg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://bou.ac.bd/fontend/css/font-awesome.min.css">
+    <link href="https://bou.ac.bd/fontend/css/materialize.css" rel="stylesheet">
+    <link href="https://bou.ac.bd/fontend/css/bootstrap.css" rel="stylesheet" />
+    <link href="https://bou.ac.bd/fontend/css/style.css" rel="stylesheet" />
+    <link href="https://bou.ac.bd/fontend/css/gallery_style.css" rel="stylesheet" />
+    <link href="https://bou.ac.bd/fontend/css/aos.css" rel="stylesheet">
+    <link href="https://bou.ac.bd/fontend/css/style-mob.css" rel="stylesheet" />
+    <style>
+        .pop-cour { background: linear-gradient(135deg, #e6f0fa 0%, #d0e0f0 100%); padding: 40px 0; border-top: 5px solid #225C9E; border-bottom: 5px solid #225C9E; margin-bottom: 30px; }
+        .con-title { color: #225C9E; font-size: 28px; font-family: 'Arial', sans-serif; font-weight: bold; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
+        .regional-info { background: #fff; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; text-align: left; margin-bottom: 20px; }
+        .regional-info h3 { color: #225C9E; font-size: 20px; margin-bottom: 15px; text-align: center; }
+        .regional-info p { font-size: 16px; color: #333; margin: 10px 0; line-height: 1.5; text-align: center; }
+        .regional-info .form-group { margin-bottom: 15px; }
+        .regional-info label { font-size: 16px; color: #225C9E; font-weight: bold; display: block; margin-bottom: 5px; }
+        .regional-info input, .regional-info textarea, .regional-info select { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; }
+        .regional-info button { background: #225C9E; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer; margin: 5px; }
+        .regional-info button:hover { background: #003366; }
+        .regional-info .error { color: red; font-size: 14px; margin-top: 5px; display: none; }
+        .regional-info .btn-link { background: none; color: #225C9E; text-decoration: underline; padding: 0; }
+        .regional-info .btn-link:hover { color: #003366; }
+        .section { display: none; }
+        .section.active { display: block; }
+        .center-image { text-align: center; margin-bottom: 20px; }
+        .center-image img { max-width: 100%; height: auto; }
+        .active-link { background: #225C9E !important; color: #fff !important; }
+    </style>
+</head>
+<body>
+    <!-- HEADER FROM INDEX.HTML -->
+    <section>
+        <div class="ed-top">
+            <div class="container">
+                <div class="row">
+                    <div class="ed-com-t1-right">
+                        <ul>
+                            <li>
+                                <a href="https://bou.ac.bd/program-finder" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i> Find Program</a>
+                                <a href="https://bou.ac.bd/student-handbooks" class="btn btn-default"><i class="fa fa-book" aria-hidden="true"></i> Student Handbooks</a>
+                                <a href="https://bou.ac.bd/online-admission" class="btn btn-default"><i class="fa fa-plus" aria-hidden="true"></i> Online Admission</a>
+                                <a href="auth.html" class="btn btn-default active-link"><i class="fa fa-user" aria-hidden="true"></i>Account Login</a>
+                                <a href="https://bou.ac.bd/ebook" class="btn btn-default"><i class="fa fa-book" aria-hidden="true"></i> EBook</a>
+                                <a href="https://bou.ac.bd/web-email" class="btn btn-default"><i class="fa fa-envelope" aria-hidden="true"></i> Web Email</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="top-logo" data-spy="affix" data-offset-top="250">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="wed-logo">
+                            <a href="index.html"><img src="https://bou.ac.bd/fontend/images/bou_logo.jpg" alt="BOU Logo" /></a>
+                        </div>
+                        <div class="main-menu">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li class="about-menu">
+                                    <a href="#" class="mm-arr">About</a>
+                                    <div class="mm-pos">
+                                        <div class="about-mm m-menu">
+                                            <div class="m-menu-inn">
+                                                <div class="mm1-com mm1-s1">
+                                                    <h4 style="color:blue;font-weight:bold; font-size:16px;">Officials</h4>
+                                                    <ul>
+                                                        <li><a href="chancellor.html">Chancellor</a></li>
+                                                        <li><a href="https://bou.ac.bd/page/vice-chancellor">Vice Chancellor</a></li>
+                                                        <li><a href="https://bou.ac.bd/page/pro-vice-chancellor-academic">Pro-Vice Chancellor (Academic)</a></li>
+                                                        <li><a href="https://bou.ac.bd/page/pro-vice-chancellor-administration">Pro-Vice Chancellor (Administration)</a></li>
+                                                        <li><a href="https://bou.ac.bd/page/treasurer">Treasurer</a></li>
+                                                        <li><a href="https://bou.ac.bd/page/registrar">Registrar</a></li>
+                                                        <li><a href="former-vc.html">Former Vice Chancellors</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mm1-com mm1-s1">
+                                                    <h4 style="color:blue;font-weight:bold; font-size:16px;">About University</h4>
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/page/professor-emeritus">Professor Emeritus</a></li>
+                                                        <li><a href="https://bou.ac.bd/page/bou-at-a-glance">BOU At a Glance</a></li>
+                                                        <li><a href="https://bou.ac.bd/page/organogram">Organogram</a></li>
+                                                        <li><a href="#"><b>Statutory Bodies</b></a>
+                                                            <ul>
+                                                                <li><a href="https://bou.ac.bd/page/board-of-governors">Board of Governors</a></li>
+                                                                <li><a href="https://bou.ac.bd/page/academic-council">Academic Council</a></li>
+                                                                <li><a href="https://bou.ac.bd/page/finance-committee">Finance Committee</a></li>
+                                                                <li><a href="https://bou.ac.bd/page/works-committee">Works Committee</a></li>
+                                                                <li><a href="https://bou.ac.bd/page/academic-planning-committee">Academic Planning Committee</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="cour-menu">
+                                    <a href="#" class="mm-arr">Academic</a>
+                                    <div class="mm-pos">
+                                        <div class="cour-mm m-menu">
+                                            <div class="m-menu-inn">
+                                                <div class="mm1-com mm1-s1">
+                                                    <ul>
+                                                        <li><a href="school-of-education.html">School of Education</a></li>
+                                                        <li><a href="https://bou.ac.bd/academic/school-of-social-science-humanities-languages">School of Social Science, Humanities & Languages</a></li>
+                                                        <li><a href="https://bou.ac.bd/academic/open-school">Open School</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mm1-com mm1-s1">
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/academic/school-of-business">School of Business</a></li>
+                                                        <li><a href="https://bou.ac.bd/academic/school-of-agriculture-rural-development">School of Agriculture & Rural Development</a></li>
+                                                        <li><a href="https://bou.ac.bd/academic/school-of-science-technology">School of Science & Technology</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="journal-menu">
+                                    <a href="#" class="mm-arr">Journal</a>
+                                    <div class="mm-pos">
+                                        <div class="journal-mm m-menu">
+                                            <div class="m-menu-inn">
+                                                <div style="width:200px;" class="mm1-com mm1-s1">
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/journal/school-of-education">School of Education</a></li>
+                                                        <li><a href="https://bou.ac.bd/journal/school-of-social-sciences-humanities-languages">School of Social Sciences, Humanities, & Languages</a></li>
+                                                        <li><a href="https://bou.ac.bd/journal/open-school">Open School</a></li>
+                                                        <li><a href="https://bou.ac.bd/journal/school-of-business">School of Business</a></li>
+                                                        <li><a href="https://bou.ac.bd/journal/school-of-agriculture-rural-development">School of Agriculture & Rural Development</a></li>
+                                                        <li><a href="https://bou.ac.bd/journal/school-of-science-technology">School of Science & Technology</a></li>
+                                                        <b style="color:blue;">Journal News:</b>
+                                                        <ul>
+                                                            <li><a style="font-size:14px;" href="https://bou.ac.bd/journal/call-for-paper-jard">Call for Paper (JARD)</a></li>
+                                                        </ul>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="division-menu">
+                                    <a href="#" class="mm-arr">Division</a>
+                                    <div class="mm-pos">
+                                        <div class="division-mm m-menu">
+                                            <div class="m-menu-inn">
+                                                <div class="mm1-com mm1-s1">
+                                                    <h4>Division</h4>
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/division/administration">Administration</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/computer">Computer</a></li>
+                                                        <li><a href="https:// aldı="https://bou.ac.bd/division/engineering-estate">Engineering & Estate</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/examination">Examination</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/finance-accounts">Finance & Accounts</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/information-public-relation">Information & Public Relation</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/library-documentation">Library & Documentation</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/media-division">Media Division</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/planning-development">Planning & Development</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/publishing-printing-distribution">Publishing, Printing & Distribution</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/student-support-services">Student Support Services</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mm1-com mm1-s1">
+                                                    <h4>Center/Cell/Wing</h4>
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/center/centre-for-research-on-liberation-war">Centre for Research on Liberation War</a></li>
+                                                        <li><a href="https://bou.ac.bd/center/institutional-quality-assurance-cell">Institutional Quality Assurance Cell</a></li>
+                                                        <li><a href="https://bou.ac.bd/center/ict-unit">ICT Unit</a></li>
+                                                        <li><a href="https://bou.ac.bd/center/audit-cell">Audit Cell</a></li>
+                                                        <li><a href="https://bou.ac.bd/center/international-academic-program-wing">International Academic Program Wing</a></li>
+                                                        <li><a href="https://bou.ac.bd/center/bou-earn-cell">BOU EARN Cell (BEC)</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="rc-menu">
+                                    <a href="#" class="mm-arr">Regional Centers</a>
+                                    <div class="mm-pos">
+                                        <div class="rc-mm m-menu">
+                                            <div class="m-menu-inn">
+                                                <div class="mm1-com mm1-s1">
+                                                    <ul>
+                                                        <li><a href="regional-center-dhaka.html">Dhaka</a></li>
+                                                        <li><a href="regional-center-chattogram.html">Chattogram</a></li>
+                                                        <li><a href="regional-center-rajshahi.html">Rajshahi</a></li>
+                                                        <li><a href="https://bou.ac.bd/regional-center/khulna">Khulna</a></li>
+                                                        <li><a href="https://bou.ac.bd/regional-center/sylhet">Sylhet</a></li>
+                                                        <li><a href="https://bou.ac.bd/regional-center/barishal">Barishal</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mm1-com mm1-s1">
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/regional-center/rangpur">Rangpur</a></li>
+                                                        <li><a href="https://bou.ac.bd/regional-center/mymensingh">Mymensingh</a></li>
+                                                        <li><a href="https://bou.ac.bd/regional-center/cumilla">Cumilla</a></li>
+                                                        <li><a href="https://bou.ac.bd/regional-center/bogura">Bogura</a></li>
+                                                        <li><a href="https://bou.ac.bd/regional-center/jashore">Jashore</a></li>
+                                                        <li><a href="https://bou.ac.bd/regional-center/faridpur">Faridpur</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="admi-menu">
+                                    <a href="#" class="mm-arr">Results</a>
+                                    <div class="mm-pos">
+                                        <div class="admi-mm m-menu">
+                                            <div class="m-menu-inn">
+                                                <div class="mm1-com mm1-s1">
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/results/final-year-semester">Result (Final/Year/Semester)</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mm1-com mm1-s1">
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/results/complaint-services">Complaint & Other Services</a></li>
+                                                        <li><a href="https://bou.ac.bd/results/result-news">Result News</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="academic-menu">
+                                    <a href="#" class="mm-arr">Notice</a>
+                                    <div class="mm-pos">
+                                        <div class="academic-mm m-menu">
+                                            <div class="m-menu-inn">
+                                                <div class="mm1-com mm1-s1">
+                                                    <h4>Academic</h4>
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/notice/admission">Admission</a></li>
+                                                        <li><a href="https://bou.ac.bd/notice/examination">Examination</a></li>
+                                                        <li><a href="https://bou.ac.bd/notice/registration-class">Registration/Class</a></li>
+                                                        <li><a href="https://bou.ac.bd/notice/result-news">Result News</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mm1-com mm1-s1">
+                                                    <h4>Administrative</h4>
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/notice/administrative">Administrative</a></li>
+                                                        <li><a href="https://bou.ac.bd/notice/recruitment">Recruitment</a></li>
+                                                        <li><a href="https://bou.ac.bd/notice/noc-office-order">NOC/Office Order</a></li>
+                                                        <li><a href="https://bou.ac.bd/notice/tender-procurement">Tender/Procurement</a></li>
+                                                        <li><a href="https://bou.ac.bd/notice/transfer-order">Transfer Order</a></li>
+                                                        <li><a href="https://bou.ac.bd/notice/national-days">National Days</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="https://bou.ac.bd/admission">Admission</a></li>
+                                <li class="contact-menu">
+                                    <a href="#" class="mm-arr">Contact</a>
+                                    <div class="mm-pos">
+                                        <div class="contact-mm m-menu">
+                                            <div class="m-menu-inn">
+                                                <div style="width:200px;" class="mm1-com mm1-s1">
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/contact/main-campus">Main Campus</a></li>
+                                                        <li><a href="https://bou.ac.bd/contact/regional-center">Regional Center</a></li>
+                                                        <li><a href="https://bou.ac.bd/contact/sub-regional-center">Sub-Regional Center</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="https://bou.ac.bd/faqs">FAQs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHENTICATION CONTENT -->
+    <section class="pop-cour">
+        <div class="container com-sp pad-bot-70" data-aos="fade-up">
+            <div class="con-title"><h2>Account Login</h2></div>
+            <div class="center-image"><img src="images\web_banner1.jpg" alt="OSAPS Login Banner" /></div>
+
+            <!-- Initial Prompt Section -->
+            <div id="initialPrompt" class="regional-info section active">
+                <h3>Welcome to BOU</h3>
+                <p>Do you have an account?</p>
+                <div style="text-align: center;">
+                    <button onclick="showSection('loginRole')">Yes</button>
+                    <button onclick="showSection('signupRole')">No</button>
+                </div>
+            </div>
+
+            <!-- Login Role Selection -->
+            <div id="loginRole" class="regional-info section">
+                <h3>Login</h3>
+                <p>Select your role:</p>
+                <div style="text-align: center;">
+                    <button onclick="showSection('loginForm', 'Student')">Student</button>
+                    <button onclick="showSection('loginForm', 'Official')">Official</button>
+                </div>
+                <div style="text-align: center; margin-top: 10px;">
+                    <button class="btn-link" onclick="showSection('initialPrompt')">Back</button>
+                </div>
+            </div>
+
+            <!-- Signup Role Selection -->
+            <div id="signupRole" class="regional-info section">
+                <h3>Sign Up</h3>
+                <p>Select your role:</p>
+                <div style="text-align: center;">
+                    <button onclick="showSection('signupForm', 'Student')">Student</button>
+                    <button onclick="showSection('signupForm', 'Official')">Official</button>
+                </div>
+                <div style="text-align: center; margin-top: 10px;">
+                    <button class="btn-link" onclick="showSection('initialPrompt')">Back</button>
+                </div>
+            </div>
+
+            <!-- Login Form -->
+            <div id="loginForm" class="regional-info section">
+                <h3>Login as <span id="loginRoleText"></span></h3>
+                <form id="loginFormElement" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" required />
+                        <div id="loginEmailError" class="error">Please enter a valid email address.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required />
+                        <div id="loginPasswordError" class="error">Invalid email or password.</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <button type="submit">Login</button>
+                        <button type="button" class="btn-link" onclick="showSection('loginRole')">Back</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signupForm" class="regional-info section">
+                <h3>Sign Up as <span id="signupRoleText"></span></h3>
+                <form id="signupFormElement" onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" required />
+                        <div id="signupEmailError" class="error">Please enter a valid email address.</div>
+                        <div id="signupEmailExistsError" class="error">This email is already registered.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password (min 6 characters)</label>
+                        <input type="password" id="signupPassword" required />
+                        <div id="signupPasswordError" class="error">Password must be at least 6 characters.</div>
+                    </div>
+                    <div class="form-group" id="studentIdField" style="display: none;">
+                        <label for="studentId">Student ID</label>
+                        <input type="text" id="studentId" />
+                    </div>
+                    <div class="form-group" id="departmentField" style="display: none;">
+                        <label for="department">Department</label>
+                        <input type="text" id="department" />
+                    </div>
+                    <div style="text-align: center;">
+                        <button type="submit">Sign Up</button>
+                        <button type="button" class="btn-link" onclick="showSection('signupRole')">Back</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- User Profile -->
+            <div id="profile" class="regional-info section">
+                <h3>User Profile</h3>
+                <form id="profileForm" onsubmit="handleProfileUpdate(event)">
+                    <div class="form-group">
+                        <label for="profileName">Full Name</label>
+                        <input type="text" id="profileName" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="profileEmail">Email</label>
+                        <input type="email" id="profileEmail" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label for="profileDescription">Description</label>
+                        <textarea id="profileDescription" rows="4"></textarea>
+                    </div>
+                    <div class="form-group" id="profileStudentIdField" style="display: none;">
+                        <label for="profileStudentId">Student ID</label>
+                        <input type="text" id="profileStudentId" />
+                    </div>
+                    <div class="form-group" id="profileDepartmentField" style="display: none;">
+                        <label for="profileDepartment">Department</label>
+                        <input type="text" id="profileDepartment" />
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">New Password (leave blank to keep current)</label>
+                        <input type="password" id="newPassword" />
+                        <div id="newPasswordError" class="error">Password must be at least 6 characters.</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <button type="submit">Update Profile</button>
+                        <button type="button" onclick="handleLogout()">Logout</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER FROM REGIONAL-CENTER-CHATTOGRAM.HTML -->
+    <section class="wed-hom-footer">
+        <div class="container">
+            <div class="row wed-foot-link">
+                <div class="col-md-4 foot-tc-mar-t-o">
+                    <h4>Important Links</h4>
+                    <ul>
+                        <li><a href="https://moedu.gov.bd/">Ministry of Education</a></li>
+                        <li><a href="https://x.com/bou_official">BOU Twitter/X Account</a></li>
+                        <li><a href="https://facebook.com/bouofficial">BOU FaceBook Page</a></li>
+                        <li><a href="https://instagram.com/bou_official">BOU Instagram Account</a></li>
+                        <li><a href="https://youtube.com/bouofficial">BOU Youtube Channel</a></li>
+                        <li><a href="https://boutube.bou.ac.bd/">BOU Tube</a></li>
+                        <li><a href="https://youtube.com/bouacademic">YouTube (Academic)</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://bou.ac.bd/resources/forms">Download Forms</a></li>
+                        <li><a href="https://bou.ac.bd/resources/bou-act-rules">BOU Act/Rules</a></li>
+                        <li><a href="https://bou.ac.bd/resources/journals-magazines">Porikroma, Magazine & Journal</a></li>
+                        <li><a href="https://bou.ac.bd/resources/ebook">BOU E-Book</a></li>
+                        <li><a href="https://bou.ac.bd/resources/journal-scientific-technological-research">Journal of Scientific and Technological Research</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>BOU Location Map</h4>
+                    <a href="https://bou.ac.bd/boumap">
+                        <img src="https://bou.ac.bd/fontend/images/bou_google_map.jpg" width="100%" height="70%" alt="BOU Map">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="wed-rights">
+        <div class="container">
+            <div class="row">
+                <div class="copy-right">
+                    <p>© 2025 Bangladesh Open University. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JAVASCRIPT DEPENDENCIES -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://bou.ac.bd/fontend/js/main.min.js"></script>
+    <script src="https://bou.ac.bd/fontend/js/bootstrap.min.js"></script>
+    <script src="https://bou.ac.bd/fontend/js/materialize.min.js"></script>
+    <script src="https://bou.ac.bd/fontend/js/custom.js"></script>
+    <script src="https://bou.ac.bd/fontend/js/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- AUTHENTICATION JAVASCRIPT -->
+    <script>
+        let currentUser = null;
+
+        // Show specific section
+        function showSection(sectionId, role = null) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+
+            if (role) {
+                if (sectionId === 'loginForm') {
+                    document.getElementById('loginRoleText').textContent = role;
+                } else if (sectionId === 'signupForm') {
+                    document.getElementById('signupRoleText').textContent = role;
+                    document.getElementById('studentIdField').style.display = role === 'Student' ? 'block' : 'none';
+                    document.getElementById('departmentField').style.display = role === 'Official' ? 'block' : 'none';
+                }
+            }
+        }
+
+        // Validate email format
+        function isValidEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        // Handle Signup
+        function handleSignup(event) {
+            event.preventDefault();
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+            const role = document.getElementById('signupRoleText').textContent;
+            const studentId = document.getElementById('studentId').value;
+            const department = document.getElementById('department').value;
+
+            // Reset errors
+            document.getElementById('signupEmailError').style.display = 'none';
+            document.getElementById('signupEmailExistsError').style.display = 'none';
+            document.getElementById('signupPasswordError').style.display = 'none';
+
+            // Validate inputs
+            if (!isValidEmail(email)) {
+                document.getElementById('signupEmailError').style.display = 'block';
+                return;
+            }
+            if (password.length < 6) {
+                document.getElementById('signupPasswordError').style.display = 'block';
+                return;
+            }
+
+            // Check if email exists
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            if (users.some(user => user.email === email)) {
+                document.getElementById('signupEmailExistsError').style.display = 'block';
+                return;
+            }
+
+            // Save user
+            const user = {
+                name,
+                email,
+                password,
+                role,
+                description: '',
+                studentId: role === 'Student' ? studentId : '',
+                department: role === 'Official' ? department : ''
+            };
+            users.push(user);
+            localStorage.setItem('users', JSON.stringify(users));
+
+            // Log in the user
+            currentUser = user;
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            showProfile();
+        }
+
+        // Handle Login
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            // Reset errors
+            document.getElementById('loginEmailError').style.display = 'none';
+            document.getElementById('loginPasswordError').style.display = 'none';
+
+            // Validate email
+            if (!isValidEmail(email)) {
+                document.getElementById('loginEmailError').style.display = 'block';
+                return;
+            }
+
+            // Check credentials
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const user = users.find(u => u.email === email && u.password === password);
+            if (!user) {
+                document.getElementById('loginPasswordError').style.display = 'block';
+                return;
+            }
+
+            // Log in the user
+            currentUser = user;
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            showProfile();
+        }
+
+        // Show Profile
+        function showProfile() {
+            const user = JSON.parse(localStorage.getItem('currentUser'));
+            if (!user) {
+                showSection('initialPrompt');
+                return;
+            }
+
+            document.getElementById('profileName').value = user.name;
+            document.getElementById('profileEmail').value = user.email;
+            document.getElementById('profileDescription').value = user.description || '';
+            document.getElementById('profileStudentIdField').style.display = user.role === 'Student' ? 'block' : 'none';
+            document.getElementById('profileDepartmentField').style.display = user.role === 'Official' ? 'block' : 'none';
+            document.getElementById('profileStudentId').value = user.studentId || '';
+            document.getElementById('profileDepartment').value = user.department || '';
+
+            showSection('profile');
+        }
+
+        // Handle Profile Update
+        function handleProfileUpdate(event) {
+            event.preventDefault();
+            const name = document.getElementById('profileName').value;
+            const description = document.getElementById('profileDescription').value;
+            const studentId = document.getElementById('profileStudentId').value;
+            const department = document.getElementById('profileDepartment').value;
+            const newPassword = document.getElementById('newPassword').value;
+
+            // Reset errors
+            document.getElementById('newPasswordError').style.display = 'none';
+
+            // Validate new password if provided
+            if (newPassword && newPassword.length < 6) {
+                document.getElementById('newPasswordError').style.display = 'block';
+                return;
+            }
+
+            // Update user
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const userIndex = users.findIndex(u => u.email === currentUser.email);
+            users[userIndex] = {
+                ...currentUser,
+                name,
+                description,
+                studentId: currentUser.role === 'Student' ? studentId : currentUser.studentId,
+                department: currentUser.role === 'Official' ? department : currentUser.department,
+                password: newPassword || currentUser.password
+            };
+
+            currentUser = users[userIndex];
+            localStorage.setItem('users', JSON.stringify(users));
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            alert('Profile updated successfully!');
+        }
+
+        // Handle Logout
+        function handleLogout() {
+            currentUser = null;
+            localStorage.removeItem('currentUser');
+            showSection('initialPrompt');
+        }
+
+        // Check if user is logged in
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('currentUser'));
+            if (user) {
+                currentUser = user;
+                showProfile();
+            }
+        });
+    </script>
+</body>
+</html>
