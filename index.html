@@ -1,0 +1,1481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+    <title>Bangladesh Open University (BOU)</title>
+    <!-- META TAGS -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keyword" content="Bangladesh Open University, BOU, Open and Distance Learning, Bangladesh Open University Gazipur, Learning Management System, Elearning, Public University, Distance education, Distance Learning">
+
+    <!-- FAV ICON -->
+    <link rel="shortcut icon" href="https://bou.ac.bd/fontend/images/favi.jpg" type="image/x-icon">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700" rel="stylesheet">
+    <!-- FONTAWESOME ICONS -->
+    <link rel="stylesheet" href="https://bou.ac.bd/fontend/css/font-awesome.min.css">
+    <!-- ALL CSS FILES -->
+    <link href="https://bou.ac.bd/fontend/css/materialize.css" rel="stylesheet">
+    <link href="https://bou.ac.bd/fontend/css/bootstrap.css" rel="stylesheet" />
+    <link href="https://bou.ac.bd/fontend/css/style.css" rel="stylesheet" />
+    <link href="https://bou.ac.bd/fontend/css/gallery_style.css" rel="stylesheet" />
+    <link href="https://bou.ac.bd/fontend/css/aos.css" rel="stylesheet">
+    <!-- RESPONSIVE CSS FOR MOBILE AND TABLET -->
+    <link href="https://bou.ac.bd/fontend/css/style-mob.css" rel="stylesheet" />
+
+    <!-- JAVASCRIPT LIBRARIES -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js for IE8 support -->
+    <!--[if lt IE 9]>
+    <script src="https://bou.ac.bd/fontend/js/html5shiv.js"></script>
+    <script src="https://bou.ac.bd/fontend/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom Styles for Frontend -->
+    <style>
+        .counter-box {
+            display: block;
+            background: #225C9E;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10%;
+            margin-bottom: 10px;
+        }
+        .counter-box p {
+            margin: 5px 0 0;
+            padding: 0;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .counter-box i {
+            font-size: 40px;
+            margin: 0 0 14px;
+            color: #fff;
+        }
+        .counter {
+            display: block;
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 28px;
+        }
+        .counter-box.colored {
+            background: #003366;
+            border-radius: 50%;
+        }
+        .counter-box.colored p,
+        .counter-box.colored i,
+        .counter-box.colored .counter {
+            color: #fff;
+        }
+        .news-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .news-item a {
+            color: #225C9E;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .news-item a:hover {
+            text-decoration: underline;
+        }
+        .news-date {
+            color: #666;
+            font-size: 14px;
+        }
+        .faculty-box {
+            text-align: center;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+        .faculty-box img {
+            max-width: 100%;
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .faculty-box h4 {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #225C9E;
+        }
+        .vc-message {
+            background: #f9f9f9;
+            padding: 20px;
+            border-left: 5px solid #225C9E;
+        }
+        .vc-message img {
+            max-width: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .event-box {
+            padding: 15px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .event-box h4 {
+            font-size: 16px;
+            color: #225C9E;
+        }
+        /* Tabbed Notice Board Styling */
+        #exTab1 .tab-content {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+        #exTab1 ul.nav-pills {
+            margin-bottom: 0;
+        }
+        #exTab1 ul.nav-pills > li > a {
+            border-radius: 5px 5px 0 0;
+            background: #f5f5f5;
+            color: #333;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+        #exTab1 ul.nav-pills > li.active > a,
+        #exTab1 ul.nav-pills > li.active > a:hover,
+        #exTab1 ul.nav-pills > li.active > a:focus {
+            background: #225C9E;
+            color: #fff;
+        }
+        #exTab1 ul.nav-pills > li > a:hover {
+            background: #ddd;
+        }
+
+        /* Student's Corner Styling */
+         .student-corner {
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        .student-corner .con-title {
+            color: #225C9E;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .student-corner .row > div {
+            padding: 10px;
+        }
+        .student-corner .link-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .student-corner .link-item span {
+            margin-right: 10px;
+        }
+        .student-corner .link-item a {
+            padding: 8px 15px;
+            background: #225C9E;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            min-width: 100px; /* Ensures consistent button width */
+            text-align: center;
+        }
+        .student-corner .link-item a:hover {
+            background: #003366;
+        }
+
+        /* Bangladesh Open University in Numbers Styling */
+        .bou-numbers {
+            background: #e6f0fa;
+            padding: 30px 0;
+            text-align: center;
+        }
+        .bou-numbers .con-title {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .bou-numbers .number-box {
+            display: inline-block;
+            background: #225C9E;
+            color: #fff;
+            width: 150px;
+            height: 180px; /* Increased height to accommodate text */
+            border-radius: 15px;
+            margin: 0 15px;
+            padding: 10px;
+            vertical-align: top;
+            text-align: center;
+            word-wrap: break-word; /* Ensures text wraps within the box */
+            overflow: hidden; /* Prevents overflow */
+        }
+        .bou-numbers .number-box .number {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .bou-numbers .number-box .label {
+            font-size: 14px; /* Reduced font size for better fit */
+            line-height: 1.2;
+            padding: 0 5px; /* Added padding to help with wrapping */
+        }
+
+         /* Updated Vertical Sidebar Social Media Styling (icon-float) */
+        .icon-float {
+            position: fixed;
+            right: 20px;
+            top: 70%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+        .icon-float ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .icon-float ul li {
+            margin: 10px 0;
+            position: relative;
+            width: 30px;
+            height: 30px;
+        }
+        .icon-float ul li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        .icon-float ul li a:hover {
+            transform: scale(1.1);
+        }
+        .icon-float ul li a img.icon {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            padding: 5px;
+        }
+        .icon-float ul li a img.bou-logo {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 30%;
+            border: 2px solid #fff;
+            background-color: #fff;
+            object-fit: contain;
+            z-index: 1;
+        }
+        .icon-float ul li a.fb1 {
+            background-color: #3b5998;
+        }
+        .icon-float ul li a.yt1 {
+            background-color: #ff0000;
+        }
+        .icon-float ul li a.sh1 {
+            background-color: #000000;
+        }
+
+        .pop-cour {
+            background: linear-gradient(135deg, #e6f0fa 0%, #d0e0f0 100%);
+            padding: 40px 0;
+            border-top: 5px solid #225C9E;
+            border-bottom: 5px solid #225C9E;
+            margin-bottom: 30px;
+        }
+        .social-media {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .social-media .con-title {
+            color: #225C9E;
+            font-size: 28px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            width: 100%;
+            text-align: center;
+        }
+        .social-media .social-icons,
+        .social-media .contact-info {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+        }
+        .social-media .social-icons {
+            text-align: center;
+        }
+        .social-media .social-icon {
+            display: inline-block;
+            margin: 0 10px 20px;
+            position: relative;
+            width: 70px;
+            height: 60px;
+            perspective: 1000px;
+        }
+        .social-media .social-icon a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .social-media .social-icon a:hover {
+            transform: translateY(-5px) rotateY(10deg);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .social-media .social-icon img.icon {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+        .social-media .social-icon img.icon:hover {
+            transform: scale(1.1);
+        }
+        .social-media .social-icon .bou-logo {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            background-color: #fff;
+            object-fit: contain;
+            z-index: 1;
+        }
+        .social-media .contact-info {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+        }
+        .social-media .contact-info h3 {
+            color: #225C9E;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-family: 'Arial', sans-serif;
+        }
+        .social-media .contact-info p {
+            font-size: 16px;
+            color: #333;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .social-media .contact-info a {
+            color: #225C9E;
+            text-decoration: none;
+        }
+        .social-media .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- MOBILE MENU -->
+    <section>
+        <div class="ed-mob-menu">
+            <div class="ed-mob-menu-con">
+                <div class="ed-mm-left">
+                    <div class="wed-logo">
+                        <a href="https://bou.ac.bd/"><img src="https://bou.ac.bd/fontend/images/bou_logo.jpg" alt="BOU Logo" /></a>
+                    </div>
+                </div>
+                <div class="ed-mm-right">
+                    <div class="ed-mm-menu">
+                        <a href="#!" class="ed-micon"><i class="fa fa-bars"></i></a>
+                        <div class="ed-mm-inn">
+                            <a href="#!" class="ed-mi-close"><i class="fa fa-times"></i></a>
+                            <h4>Authority</h4>
+                            <ul>
+                                <li><a href="https://bou.ac.bd/page/chancellor">Chancellor</a></li>
+                                <li><a href="https://bou.ac.bd/page/vice-chancellor">Vice Chancellor</a></li>
+                                <li><a href="https://bou.ac.bd/page/pro-vice-chancellor-academic">Pro-Vice Chancellor (Academic)</a></li>
+                                <li><a href="https://bou.ac.bd/page/pro-vice-chancellor-administration">Pro-Vice Chancellor (Administration)</a></li>
+                                <li><a href="https://bou.ac.bd/page/treasurer">Treasurer</a></li>
+                                <li><a href="https://bou.ac.bd/page/registrar">Registrar</a></li>
+                                <li><a href="no info">Former Vice Chancellors</a></li>
+                            </ul>
+                            <h4>About</h4>
+                            <ul>
+                                <li><a href="https://bou.ac.bd/page/professor-emeritus">Professor Emeritus</a></li>
+                                <li><a href="https://bou.ac.bd/page/bou-at-a-glance">BOU At a Glance</a></li>
+                                <li><a href="https://bou.ac.bd/page/organogram">Organogram</a></li>
+                                <li><a href="#"><b>Statutory Bodies</b></a>
+                                    <ul>
+                                        <li><a href="https://bou.ac.bd/page/board-of-governors">Board of Governors</a></li>
+                                        <li><a href="https://bou.ac.bd/page/academic-council">Academic Council</a></li>
+                                        <li><a href="https://bou.ac.bd/page/finance-committee">Finance Committee</a></li>
+                                        <li><a href="https://bou.ac.bd/page/works-committee">Works Committee</a></li>
+                                        <li><a href="https://bou.ac.bd/page/academic-planning-committee">Academic Planning Committee</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <h4>Academic</h4>
+                            <ul>
+                                <li><a href="https://bou.ac.bd/academic/school-of-education">School of Education</a></li>
+                                <li><a href="https://bou.ac.bd/academic/school-of-social-science-humanities-languages">School of Social Science, Humanities & Languages</a></li>
+                                <li><a href="https://bou.ac.bd/academic/open-school">Open School</a></li>
+                                <li><a href="https://bou.ac.bd/academic/school-of-business">School of Business</a></li>
+                                <li><a href="https://bou.ac.bd/academic/school-of-agriculture-rural-development">School of Agriculture & Rural Development</a></li>
+                                <li><a href="https://bou.ac.bd/academic/school-of-science-technology">School of Science & Technology</a></li>
+                            </ul>
+                            <h4>Divisions</h4>
+                            <ul>
+                                <li><a href="https://bou.ac.bd/division/administration">Administration</a></li>
+                                <li><a href="https://bou.ac.bd/division/computer">Computer</a></li>
+                                <li><a href="https://bou.ac.bd/division/engineering-estate">Engineering & Estate</a></li>
+                                <li><a href="https://bou.ac.bd/division/examination">Examination</a></li>
+                                <li><a href="https://bou.ac.bd/division/finance-accounts">Finance & Accounts</a></li>
+                                <li><a href="https://bou.ac.bd/division/information-public-relation">Information & Public Relation</a></li>
+                                <li><a href="https://bou.ac.bd/division/library-documentation">Library & Documentation</a></li>
+                                <li><a href="https://bou.ac.bd/division/media-division">Media Division</a></li>
+                                <li><a href="https://bou.ac.bd/division/planning-development">Planning & Development</a></li>
+                                <li><a href="https://bou.ac.bd/division/publishing-printing-distribution">Publishing, Printing & Distribution</a></li>
+                                <li><a href="https://bou.ac.bd/division/student-support-services">Student Support Services</a></li>
+                            </ul>
+                            <h4>Center/Cell/Wing</h4>
+                            <ul>
+                                <li><a href="https://bou.ac.bd/center/centre-for-research-on-liberation-war">Centre for Research on Liberation War</a></li>
+                                <li><a href="https://bou.ac.bd/center/institutional-quality-assurance-cell">Institutional Quality Assurance Cell</a></li>
+                                <li><a href="https://bou.ac.bd/center/ict-unit">ICT Unit</a></li>
+                                <li><a href="https://bou.ac.bd/center/audit-cell">Audit Cell</a></li>
+                                <li><a href="https://bou.ac.bd/center/international-academic-program-wing">International Academic Program Wing</a></li>
+                                <li><a href="https://bou.ac.bd/center/bou-earn-cell">BOU EARN Cell (BEC)</a></li>
+                            </ul>
+                            <h4>Regional Center</h4>
+                            <ul>
+                                <li><a href="https://bou.ac.bd/regional-center/dhaka">Dhaka</a></li>
+                                <li><a href="https://bou.ac.bd/regional-center/chattogram">Chattogram</a></li>
+                                <li><a href="https://bou.ac.bd/regional-center/rajshahi">Rajshahi</a></li>
+                                <li><a href="https://bou.ac.bd/regional-center/khulna">Khulna</a></li>
+                                <li><a href="https://bou.ac.bd/regional-center/sylhet">Sylhet</a></li>
+                                <li><a href="https://bou.ac.bd/regional-center/barishal">Barishal</a></li>
+                                <li><a href="https://bou.ac.bd/regional-center/rangpur">Rangpur</a></li>
+                                <li><a href="https://bou.ac.bd/regional-center/mymensingh">Mymensingh</a></li>
+                                <li><a href="https://bou.ac.bd/regional-center/cumilla">Cumilla</a></li>
+                                <li><a href="https://bou.ac.bd/regional-center/bogura">Bogura</a></li>
+                                <li><a href="https://bou.ac.bd/regional-center/jashore">Jashore</a></li>
+                                <li><a href="https://bou.ac.bd/regional-center/faridpur">Faridpur</a></li>
+                            </ul>
+                            <h4>Results</h4>
+                            <ul>
+                                <li><a href="https://bou.ac.bd/results/final-year-semester">Result (Final/Year/Semester)</a></li>
+                                <li><a href="https://bou.ac.bd/results/complaint-services">Complaint & Other Services</a></li>
+                                <li><a href="https://bou.ac.bd/results/result-news">Result News</a></li>
+                            </ul>
+                            <h4>Notice</h4>
+                            <ul>
+                                <li><a href="https://bou.ac.bd/notice/admission">Admission</a></li>
+                                <li><a href="https://bou.ac.bd/notice/registration-class">Registration/Class</a></li>
+                                <li><a href="https://bou.ac.bd/notice/examination">Examination</a></li>
+                                <li><a href="https://bou.ac.bd/notice/result">Result</a></li>
+                                <li><a href="https://bou.ac.bd/notice/administrative">Administrative</a></li>
+                                <li><a href="https://bou.ac.bd/notice/recruitment">Recruitment</a></li>
+                                <li><a href="https://bou.ac.bd/notice/noc-office-order">NOC/Office Order</a></li>
+                                <li><a href="https://bou.ac.bd/notice/tender">Tender</a></li>
+                                <li><a href="https://bou.ac.bd/notice/transfer-order">Transfer Order</a></li>
+                                <li><a href="https://bou.ac.bd/notice/national-days">National Days</a></li>
+                            </ul>
+                            <h4>Journal</h4>
+                            <ul>
+                                <li><a href="https://bou.ac.bd/journal/school-of-education">School of Education</a></li>
+                                <li><a href="https://bou.ac.bd/journal/school-of-social-sciences-humanities-languages">School of Social Sciences, Humanities, & Languages</a></li>
+                                <li><a href="https://bou.ac.bd/journal/open-school">Open School</a></li>
+                                <li><a href="https://bou.ac.bd/journal/school-of-business">School of Business</a></li>
+                                <li><a href="https://bou.ac.bd/journal/school-of-agriculture-rural-development">School of Agriculture & Rural Development</a></li>
+                                <li><a href="https://bou.ac.bd/journal/school-of-science-technology">School of Science & Technology</a></li>
+                            </ul>
+                            <h4>Contact</h4>
+                            <ul>
+                                <li><a href="https://bou.ac.bd/contact/main-campus">Main Campus</a></li>
+                                <li><a href="https://bou.ac.bd/contact/regional-center">Regional Center</a></li>
+                                <li><a href="https://bou.ac.bd/contact/sub-regional-center">Sub-Regional Center</a></li>
+                            </ul>
+                            <li><a href="faq.html">FAQs</a></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HEADER SECTION -->
+    <section>
+        <!-- TOP BAR -->
+        <div class="ed-top">
+            <div class="container">
+                <div class="row">
+                    <div class="ed-com-t1-right">
+                        <ul>
+                            <li>
+                                <a href="https://bou.ac.bd/program-finder" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i> Find Program</a>
+                                <a href="https://bou.ac.bd/student-handbooks" class="btn btn-default"><i class="fa fa-book" aria-hidden="true"></i> Student Handbooks</a>
+                                <a href="admission.html" class="hover:text-gray-300">Online Admission</a>
+                                <a href="auth.html" class="btn btn-default"><i class="fa fa-user" aria-hidden="true"></i> Account Login</a>
+                                <a href="https://bou.ac.bd/ebook" class="btn btn-default"><i class="fa fa-book" aria-hidden="true"></i> EBook</a>
+                                <a href="https://bou.ac.bd/web-email" class="btn btn-default"><i class="fa fa-envelope" aria-hidden="true"></i> Web Email</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOGO AND MENU SECTION -->
+        <div class="top-logo" data-spy="affix" data-offset-top="250">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="wed-logo">
+                            <a href="https://bou.ac.bd/"><img src="https://bou.ac.bd/fontend/images/bou_logo.jpg" alt="BOU Logo" /></a>
+                        </div>
+                        <div class="main-menu">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li class="about-menu">
+                                    <a href="#" class="mm-arr">About</a>
+                                    <div class="mm-pos">
+                                        <div class="about-mm m-menu">
+                                            <div class="m-menu-inn">
+                                                <div class="mm1-com mm1-s1">
+                                                    <h4 style="color:blue;font-weight:bold; font-size:16px;">Officials</h4>
+                                                    <ul>
+                                                        <li><a href="chancellor.html">Chancellor</a></li>
+                                                        <li><a href="https://bou.ac.bd/page/vice-chancellor">Vice Chancellor</a></li>
+                                                        <li><a href="https://bou.ac.bd/page/pro-vice-chancellor-academic">Pro-Vice Chancellor (Academic)</a></li>
+                                                        <li><a href="https://bou.ac.bd/page/pro-vice-chancellor-administration">Pro-Vice Chancellor (Administration)</a></li>
+                                                        <li><a href="https://bou.ac.bd/page/treasurer">Treasurer</a></li>
+                                                        <li><a href="https://bou.ac.bd/page/registrar">Registrar</a></li>
+                                                        <li><a href="former-vc.html">Former Vice Chancellors</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mm1-com mm1-s1">
+                                                    <h4 style="color:blue;font-weight:bold; font-size:16px;">About University</h4>
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/page/professor-emeritus">Professor Emeritus</a></li>
+                                                        <li><a href="https://bou.ac.bd/page/bou-at-a-glance">BOU At a Glance</a></li>
+                                                        <li><a href="https://bou.ac.bd/page/organogram">Organogram</a></li>
+                                                        <li><a href="#"><b>Statutory Bodies</b></a>
+                                                            <ul>
+                                                                <li><a href="https://bou.ac.bd/page/board-of-governors">Board of Governors</a></li>
+                                                                <li><a href="https://bou.ac.bd/page/academic-council">Academic Council</a></li>
+                                                                <li><a href="https://bou.ac.bd/page/finance-committee">Finance Committee</a></li>
+                                                                <li><a href="https://bou.ac.bd/page/works-committee">Works Committee</a></li>
+                                                                <li><a href="https://bou.ac.bd/page/academic-planning-committee">Academic Planning Committee</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="cour-menu">
+                                    <a href="#" class="mm-arr">Academic</a>
+                                    <div class="mm-pos">
+                                        <div class="cour-mm m-menu">
+                                            <div class="m-menu-inn">
+                                                <div class="mm1-com mm1-s1">
+                                                    <ul>
+                                                        <li><a href="school-of-education.html">School of Education</a></li>
+                                                        <li><a href="https://bou.ac.bd/academic/school-of-social-science-humanities-languages">School of Social Science, Humanities & Languages</a></li>
+                                                        <li><a href="https://bou.ac.bd/academic/open-school">Open School</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mm1-com mm1-s1">
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/academic/school-of-business">School of Business</a></li>
+                                                        <li><a href="https://bou.ac.bd/academic/school-of-agriculture-rural-development">School of Agriculture & Rural Development</a></li>
+                                                        <li><a href="https://bou.ac.bd/academic/school-of-science-technology">School of Science & Technology</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="journal-menu">
+                                    <a href="#" class="mm-arr">Journal</a>
+                                    <div class="mm-pos">
+                                        <div class="journal-mm m-menu">
+                                            <div class="m-menu-inn">
+                                                <div style="width:200px;" class="mm1-com mm1-s1">
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/journal/school-of-education">School of Education</a></li>
+                                                        <li><a href="https://bou.ac.bd/journal/school-of-social-sciences-humanities-languages">School of Social Sciences, Humanities, & Languages</a></li>
+                                                        <li><a href="https://bou.ac.bd/journal/open-school">Open School</a></li>
+                                                        <li><a href="https://bou.ac.bd/journal/school-of-business">School of Business</a></li>
+                                                        <li><a href="https://bou.ac.bd/journal/school-of-agriculture-rural-development">School of Agriculture & Rural Development</a></li>
+                                                        <li><a href="https://bou.ac.bd/journal/school-of-science-technology">School of Science & Technology</a></li>
+                                                        <b style="color:blue;">Journal News:</b>
+                                                        <ul>
+                                                            <li><a style="font-size:14px;" href="https://bou.ac.bd/journal/call-for-paper-jard">Call for Paper (JARD)</a></li>
+                                                        </ul>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="division-menu">
+                                    <a href="#" class="mm-arr">Division</a>
+                                    <div class="mm-pos">
+                                        <div class="division-mm m-menu">
+                                            <div class="m-menu-inn">
+                                                <div class="mm1-com mm1-s1">
+                                                    <h4>Division</h4>
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/division/administration">Administration</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/computer">Computer</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/engineering-estate">Engineering & Estate</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/examination">Examination</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/finance-accounts">Finance & Accounts</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/information-public-relation">Information & Public Relation</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/library-documentation">Library & Documentation</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/media-division">Media Division</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/planning-development">Planning & Development</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/publishing-printing-distribution">Publishing, Printing & Distribution</a></li>
+                                                        <li><a href="https://bou.ac.bd/division/student-support-services">Student Support Services</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mm1-com mm1-s1">
+                                                    <h4>Center/Cell/Wing</h4>
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/center/centre-for-research-on-liberation-war">Centre for Research on Liberation War</a></li>
+                                                        <li><a href="https://bou.ac.bd/center/institutional-quality-assurance-cell">Institutional Quality Assurance Cell</a></li>
+                                                        <li><a href="https://bou.ac.bd/center/ict-unit">ICT Unit</a></li>
+                                                        <li><a href="https://bou.ac.bd/center/audit-cell">Audit Cell</a></li>
+                                                        <li><a href="https://bou.ac.bd/center/international-academic-program-wing">International Academic Program Wing</a></li>
+                                                        <li><a href="https://bou.ac.bd/center/bou-earn-cell">BOU EARN Cell (BEC)</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="rc-menu">
+                                    <a href="#" class="mm-arr">Regional Centers</a>
+                                    <div class="mm-pos">
+                                        <div class="rc-mm m-menu">
+                                            <div class="m-menu-inn">
+                                                <div class="mm1-com mm1-s1">
+                                                    <ul>
+                                                        <li><a href="regional-center-dhaka.html">Dhaka</a></li>
+                                                        <li><a href="regional-center-chattogram.html">Chattogram</a></li>
+                                                        <li><a href="regional-center-rajshahi.html">Rajshahi</a></li>
+                                                        <li><a href="https://bou.ac.bd/regional-center/khulna">Khulna</a></li>
+                                                        <li><a href="https://bou.ac.bd/regional-center/sylhet">Sylhet</a></li>
+                                                        <li><a href="https://bou.ac.bd/regional-center/barishal">Barishal</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mm1-com mm1-s1">
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/regional-center/rangpur">Rangpur</a></li>
+                                                        <li><a href="https://bou.ac.bd/regional-center/mymensingh">Mymensingh</a></li>
+                                                        <li><a href="https://bou.ac.bd/regional-center/cumilla">Cumilla</a></li>
+                                                        <li><a href="https://bou.ac.bd/regional-center/bogura">Bogura</a></li>
+                                                        <li><a href="https://bou.ac.bd/regional-center/jashore">Jashore</a></li>
+                                                        <li><a href="https://bou.ac.bd/regional-center/faridpur">Faridpur</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="admi-menu">
+                                    <a href="#" class="mm-arr">Results</a>
+                                    <div class="mm-pos">
+                                        <div class="admi-mm m-menu">
+                                            <div class="m-menu-inn">
+                                                <div class="mm1-com mm1-s1">
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/results/final-year-semester">Result (Final/Year/Semester)</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mm1-com mm1-s1">
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/results/complaint-services">Complaint & Other Services</a></li>
+                                                        <li><a href="https://bou.ac.bd/results/result-news">Result News</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="academic-menu">
+                                    <a href="#" class="mm-arr">Notice</a>
+                                    <div class="mm-pos">
+                                        <div class="academic-mm m-menu">
+                                            <div class="m-menu-inn">
+                                                <div class="mm1-com mm1-s1">
+                                                    <h4>Academic</h4>
+                                                    <ul>
+                                                        <li><a href="#academic">Academic</a></li>
+                                                        <li><a href="#admission">Admission</a></li>
+                                                        <li><a href="#examination">Examination</a></li>
+                                                        <li><a href="#result">Result</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="mm1-com mm1-s1">
+                                                    <h4>Administrative</h4>
+                                                    <ul>
+                                                        <li><a href="#administrative">Administrative</a></li>
+                                                        <li><a href="#recruitment">Recruitment</a></li>
+                                                        <li><a href="#tender">Tender</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="https://bou.ac.bd/admission">Admission</a></li>
+                                
+                                <li class="contact-menu">
+                                    <a href="#" class="mm-arr">Contact</a>
+                                    <div class="mm-pos">
+                                        <div class="contact-mm m-menu">
+                                            <div class="m-menu-inn">
+                                                <div style="width:200px;" class="mm1-com mm1-s1">
+                                                    <ul>
+                                                        <li><a href="https://bou.ac.bd/contact/main-campus">Main Campus</a></li>
+                                                        <li><a href="https://bou.ac.bd/contact/regional-center">Regional Center</a></li>
+                                                        <li><a href="https://bou.ac.bd/contact/sub-regional-center">Sub-Regional Center</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="faq.html">FAQs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDER -->
+    <section>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active" style="width:100%; height:auto;">
+                    <img src="https://bou.ac.bd/fontend/images/slides/fbanner20242.jpg" alt="Slide 1">
+                </div>
+                <div class="item" style="width:100%; height:auto;">
+                    <img src="https://bou.ac.bd/fontend/images/slides/nsda_bou_mou_banner.jpg" alt="Slide 2">
+                </div>
+                <div class="item" style="width:100%; height:auto;">
+                    <img src="https://bou.ac.bd/fontend/images/slides/banner_1432.jpg" alt="Slide 3">
+                </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <i class="fa fa-chevron-left slider-arr"></i>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <i class="fa fa-chevron-right slider-arr"></i>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- QUICK LINKS -->
+    <section class="pop-cour">
+        <div class="container" style="height:50px; padding:10px 0 10px 0px;">
+            <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+                <table class="table">
+                    <tr>
+                        <td><a style="color:#225C9E; font-size:17px;font-weight:bold;" href="https://bou.ac.bd/results/ba-bss-2022">Result published of BA & BSS Program - 2022</a></td>
+                        <td><b style="color:#225C9E;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ||&nbsp;&nbsp;&nbsp;&nbsp;</b></td>
+                        <td><a style="color:#225C9E; font-size:17px;font-weight:bold;" href="https://bou.ac.bd/notice/admission-test-ssc-2025-2026">Admission test notice for SSC Program, 2025-2026</a></td>
+                    </tr>
+                </table>
+            </marquee>
+        </div>
+    </section><br>
+
+    <!-- VICE CHANCELLOR'S MESSAGE -->
+    <section class="pop-cour">
+        <div class="container com-sp pad-bot-70" data-aos="fade-up">
+            <div class="con-title">
+                <h2>Vice Chancellor's Message</h2>
+            </div>
+            <div class="vc-message">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="images\vc_bou.jpg" alt="Vice Chancellor">
+                    </div>
+                    <div class="col-md-9">
+                        <p>Welcome to Bangladesh Open University (BOU), the pioneer of open and distance learning in Bangladesh. Our mission is to provide accessible, flexible, and quality education to all, fostering lifelong learning and contributing to the socio-economic development of the nation...</p>
+                        <a href="https://bou.ac.bd/page/vice-chancellor" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOP RESOURCES -->
+    <section>
+        <div class="container top-res-bg" data-aos="zoom-out">
+            <div class="con-title">
+                <p><a style="color:#900C3F; font-weight:600px; font-size:18px;" href="https://bou.ac.bd/results">List of Published Results</a></p>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="top-rese-grid">
+                        <div class="top-rsear-dec">
+                            <a href="https://bou.ac.bd/page/vice-chancellor-congratulation" class="btn btn-primary">Vice Chancellor's Congratulation</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="top-rese-grid">
+                        <div class="top-rsear-dec">
+                            <a href="https://bou.ac.bd/page/vice-chancellor-greeting" class="btn btn-primary">Vice Chancellor's Greeting</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="top-rese-grid">
+                        <div class="top-rsear-dec">
+                            <a href="https://bou.ac.bd/page/citizen-charter" class="btn btn-primary">BOU Citizen Charter</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="top-rese-grid">
+                        <div class="top-rsear-dec">
+                            <a href="https://bou.ac.bd/results/examination-results" class="btn btn-primary">Examination Results</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="top-rese-grid">
+                        <div class="top-rsear-dec">
+                            <a href="https://bou.ac.bd/results/complaints-services" class="btn btn-primary">Complaints & Services</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="top-rese-grid">
+                        <div class="top-rsear-dec">
+                            <a href="https://bou.ac.bd/programs" class="btn btn-primary">BOU Programs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><br>
+
+    <!-- FACULTY HIGHLIGHTS -->
+    <section class="pop-cour">
+        <div class="container com-sp pad-bot-70" data-aos="zoom-in">
+            <div class="con-title">
+                <h2>Our Faculty</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="faculty-box">
+                        <img src="images/treasurer_bou.jpg" alt="Faculty 1">
+                        <h4><a href="https://bou.ac.bd/academic/school-of-education">School of Education</a></h4>
+                        <p>Leading innovation in teacher training and educational research.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="faculty-box">
+                        <img src="images/pvc_bou.jpg" alt="Faculty 2">
+                        <h4><a href="https://bou.ac.bd/academic/school-of-business">School of Business</a></h4>
+                        <p>Preparing future leaders in business and management.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="faculty-box">
+                        <img src="images\pvc_Sayeed _Ferdous.jpg" alt="Faculty 3">
+                        <h4><a href="https://bou.ac.bd/academic/school-of-science-technology">School of Science & Technology</a></h4>
+                        <p>Advancing knowledge in science and technology fields.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STUDENT'S CORNER -->
+    <section class="pop-cour">
+        <div class="container com-sp pad-bot-70" data-aos="fade-up">
+            <div class="student-corner">
+                <div class="con-title">Student's Corner</div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="link-item"><span>» Online Admission</span><a href="admission.html" target="_blank">CLICK HERE</a></div>
+                        <div class="link-item"><span>» Online Registration</span><a href="https://bou.ac.bd/osaps-login" target="_blank">CLICK HERE</a></div>
+                        <div class="link-item"><span>» Formal/Non Formal Program</span><a href="https://bou.ac.bd/programs" target="_blank">CLICK HERE</a></div>
+                        <div class="link-item"><span>» Student Handbook</span><a href="https://bou.ac.bd/student-handbooks" target="_blank">CLICK HERE</a></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="link-item"><span>» Admission News</span><a href="https://bou.ac.bd/notice/admission" target="_blank">CLICK HERE</a></div>
+                        <div class="link-item"><span>» Registration/Class News</span><a href="https://bou.ac.bd/notice/registration-class" target="_blank">CLICK HERE</a></div>
+                        <div class="link-item"><span>» Examination News</span><a href="https://bou.ac.bd/notice/examination" target="_blank">CLICK HERE</a></div>
+                        <div class="link-item"><span>» Result News</span><a href="https://bou.ac.bd/results/result-news" target="_blank">CLICK HERE</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANGLADESH OPEN UNIVERSITY IN NUMBERS -->
+    <section class="pop-cour">
+        <div class="container com-sp pad-bot-70" data-aos="fade-up">
+            <div class="bou-numbers">
+                <div class="con-title">Bangladesh Open University in Numbers</div>
+                <div class="number-box">
+                    <div class="number">1868</div>
+                    <div class="label">BOU Established</div>
+                </div>
+                <div class="number-box">
+                    <div class="number">81</div>
+                    <div class="label">Academic<br>Program</div>
+                </div>
+                <div class="number-box">
+                    <div class="number">12</div>
+                    <div class="label">BOU Regional<br>Centers</div>
+                </div>
+                <div class="number-box">
+                    <div class="number">76</div>
+                    <div class="label">Sub Regional<br>Centers</div>
+                </div>
+                <div class="number-box">
+                    <div class="number">1721</div>
+                    <div class="label">Study Centers</div>
+                </div>
+                <div class="number-box">
+                    <div class="number">345382</div>
+                    <div class="label">Total Students</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTICE BOARD -->
+    <section class="pop-cour">
+    <div class="container com-sp pad-bot-70" data-aos="fade-up">
+        <div class="con-title">
+            <h2>Notice Board</h2>
+        </div>
+        <div id="exTab1">
+            <ul class="nav nav-pills">
+                <li class="active">
+                    <a href="#academic" data-toggle="tab">Academic</a>
+                </li>
+                <li>
+                    <a href="#administrative" data-toggle="tab">Administrative</a>
+                </li>
+                <li>
+                    <a href="#admission" data-toggle="tab">Admission</a>
+                </li>
+                <li>
+                    <a href="#examination" data-toggle="tab">Examination</a>
+                </li>
+                <li>
+                    <a href="#result" data-toggle="tab">Result</a>
+                </li>
+                <li>
+                    <a href="#recruitment" data-toggle="tab">Recruitment</a>
+                </li>
+                <li>
+                    <a href="#tender" data-toggle="tab">Tender</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="academic">
+                    <div class="news-item" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <a href="https://bou.ac.bd/notice/registration-class-2025">Registration for 2025 Academic Session</a>
+                            <p class="news-date">Published: 10 May 2025</p>
+                        </div>
+                        <a href="https://bou.ac.bd/upload/notice/admission/1831553652228165.pdf" class="download-btn">Download</a>
+                    </div>
+                    <div class="news-item" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <a href="https://bou.ac.bd/notice/class-schedule-2025">Class Schedule for Semester 2025</a>
+                            <p class="news-date">Published: 08 May 2025</p>
+                        </div>
+                        <a href="https://bou.ac.bd/upload/notice/admission/1830278230872776.pdf" class="download-btn">Download</a>
+                    </div>
+                </div>
+                <div class="tab-pane" id="administrative">
+                    <div class="news-item" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <a href="https://bou.ac.bd/notice/administrative-order-2025">Administrative Order for Staff</a>
+                            <p class="news-date">Published: 05 May 2025</p>
+                        </div>
+                        <a href="https://bou.ac.bd/upload/notice/admission/1830638398548966.pdf" class="download-btn">Download</a>
+                    </div>
+                    <div class="news-item" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <a href="https://bou.ac.bd/notice/transfer-order-2025">Transfer Order for Administrative Staff</a>
+                            <p class="news-date">Published: 28 April 2025</p>
+                        </div>
+                        <a href="https://bou.ac.bd/upload/notice/result/1830636819167541.pdf" class="download-btn">Download</a>
+                    </div>
+                </div>
+                <div class="tab-pane" id="admission">
+                    <div class="news-item" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <a href="https://bou.ac.bd/notice/admission-test-ssc-2025-2026">Admission Test Notice for SSC Program, 2025-2026</a>
+                            <p class="news-date">Published: 10 May 2025</p>
+                        </div>
+                        <a href="https://bou.ac.bd/upload/notice/result/1830636976867930.pdf" class="download-btn">Download</a>
+                    </div>
+                    <div class="news-item" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <a href="https://bou.ac.bd/notice/admission-deadline-2025">Admission Deadline Extension</a>
+                            <p class="news-date">Published: 07 May 2025</p>
+                        </div>
+                        <a href="https://bou.ac.bd/upload/notice/admission/1831553652228165.pdf" class="download-btn">Download</a>
+                    </div>
+                </div>
+                <div class="tab-pane" id="examination">
+                    <div class="news-item" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <a href="https://bou.ac.bd/notice/examination-schedule-2025">Examination Schedule for Semester 2025</a>
+                            <p class="news-date">Published: 08 May 2025</p>
+                        </div>
+                        <a href="https://bou.ac.bd/upload/notice/admission/1830278230872776.pdf" class="download-btn">Download</a>
+                    </div>
+                    <div class="news-item" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <a href="https://bou.ac.bd/notice/exam-guidelines-2025">Examination Guidelines Update</a>
+                            <p class="news-date">Published: 06 May 2025</p>
+                        </div>
+                        <a href="https://bou.ac.bd/upload/notice/admission/1830638398548966.pdf" class="download-btn">Download</a>
+                    </div>
+                </div>
+                <div class="tab-pane" id="result">
+                    <div class="news-item" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <a href="https://bou.ac.bd/results/ba-bss-2022">Result Published of BA & BSS Program - 2022</a>
+                            <p class="news-date">Published: 10 May 2025</p>
+                        </div>
+                        <a href="https://bou.ac.bd/upload/notice/result/1830636819167541.pdf" class="download-btn">Download</a>
+                    </div>
+                    <div class="news-item" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <a href="https://bou.ac.bd/results/semester-result-2025">Semester Result Announcement</a>
+                            <p class="news-date">Published: 05 May 2025</p>
+                        </div>
+                        <a href="https://bou.ac.bd/upload/notice/result/1830636976867930.pdf" class="download-btn">Download</a>
+                    </div>
+                </div>
+                <div class="tab-pane" id="recruitment">
+                    <div class="news-item" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <a href="https://bou.ac.bd/notice/recruitment-2025">Recruitment Notice for Faculty Positions</a>
+                            <p class="news-date">Published: 05 May 2025</p>
+                        </div>
+                        <a href="https://bou.ac.bd/upload/notice/admission/1831553652228165.pdf" class="download-btn">Download</a>
+                    </div>
+                    <div class="news-item" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <a href="https://bou.ac.bd/notice/staff-recruitment-2025">Staff Recruitment Notice</a>
+                            <p class="news-date">Published: 03 May 2025</p>
+                        </div>
+                        <a href="https://bou.ac.bd/upload/notice/admission/1830278230872776.pdf" class="download-btn">Download</a>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tender">
+                    <div class="news-item" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <a href="https://bou.ac.bd/notice/tender-2025">Tender Notice for Infrastructure Development</a>
+                            <p class="news-date">Published: 01 May 2025</p>
+                        </div>
+                        <a href="https://bou.ac.bd/upload/notice/admission/1830638398548966.pdf" class="download-btn">Download</a>
+                    </div>
+                    <div class="news-item" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <a href="https://bou.ac.bd/notice/tender-procurement-2025">Tender for Procurement of Equipment</a>
+                            <p class="news-date">Published: 29 April 2025</p>
+                        </div>
+                        <a href="https://bou.ac.bd/upload/notice/result/1830636819167541.pdf" class="download-btn">Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 20px;">
+            <a href="https://bou.ac.bd/notice" class="btn btn-primary">View All Notices</a>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function() {
+        // Smooth scrolling for Contact link
+        $('a[href="#contact-us"]').click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({
+                scrollTop: $('#contact-us').offset().top
+            }, 800);
+        });
+
+        // Smooth scrolling and tab activation for Notice dropdown items
+        $('a[href="#academic"], a[href="#administrative"], a[href="#admission"], a[href="#examination"], a[href="#result"], a[href="#recruitment"], a[href="#tender"], a[href="#exTab1"]').click(function(event) {
+            event.preventDefault();
+            var targetTab = $(this).attr('href');
+            // Scroll to the notice board section
+            $('html, body').animate({
+                scrollTop: $('#exTab1').offset().top
+            }, 800, function() {
+                // Activate the corresponding tab if it's a specific tab
+                if (targetTab !== '#exTab1') {
+                    $('.nav-pills a[href="' + targetTab + '"]').tab('show');
+                }
+            });
+        });
+    });
+</script>
+
+
+    <!-- BOU ONLINE APPLICATIONS -->
+    <section class="pop-cour">
+        <div class="container com-sp pad-bot-70" data-aos="zoom-in">
+            <div class="udb-sec udb-prof">
+                <div class="row">
+                    <div class="con-title">
+                        <h2>BOU Online Applications</h2>
+                    </div>
+                </div>
+                <div class="row row-flex">
+                    <div style="padding-bottom:10px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="appllication colour-1">
+                            <h3><a href="https://bou.ac.bd/osaps">Online Services & Payment System (OSAPS)</a></h3>
+                        </div>
+                    </div>
+                    <div style="padding-bottom:10px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="appllication colour-3">
+                            <h3><a href="https://bou.ac.bd/results">BOU Result</a></h3>
+                        </div>
+                    </div>
+                    <div style="padding-bottom:10px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="appllication colour-4">
+                            <h3><a href="https://bou.ac.bd/oer-repository">OER Repository</a></h3>
+                        </div>
+                    </div>
+                    <div style="padding-bottom:10px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="appllication colour-2">
+                            <h3><a href="https://bou.ac.bd/web-portal">BOU Web Portal</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-flex" style="margin-top:20px;">
+                    <div style="padding-bottom:10px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="appllication colour-5">
+                            <h3><a href="https://bou.ac.bd/boutube">BOUTube</a></h3>
+                        </div>
+                    </div>
+                    <div style="padding-bottom:10px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="appllication colour-6">
+                            <h3><a href="https://bou.ac.bd/lms">Learning Management System (LMS)</a></h3>
+                        </div>
+                    </div>
+                    <div style="padding-bottom:10px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="appllication colour-7">
+                            <h3><a href="https://bou.ac.bd/open-tv">BOU Open TV</a></h3>
+                        </div>
+                    </div>
+                    <div style="padding-bottom:10px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="appllication colour-8">
+                            <h3><a href="https://bou.ac.bd/tutor-login">Tutor/Coordinator Login</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMS AND RESOURCES -->
+    <section class="pop-cour">
+        <div class="container com-sp pad-bot-70" data-aos="zoom-in">
+            <div class="udb-sec udb-prof">
+                <div class="row">
+                    <div class="con-title">
+                        <h2>Forms and Resources</h2>
+                    </div>
+                </div>
+                <div class="row row-flex">
+                    <div style="padding-bottom:10px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="appllication colour-1">
+                            <h3><a href="https://bou.ac.bd/resources/forms">All Forms (Downloadable)</a></h3>
+                        </div>
+                    </div>
+                    <div style="padding-bottom:10px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="appllication colour-2">
+                            <h3><a href="https://bou.ac.bd/resources/bou-act-rules">BOU Act and Rules</a></h3>
+                        </div>
+                    </div>
+                    <div style="padding-bottom:10px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="appllication colour-3">
+                            <h3><a href="https://bou.ac.bd/resources/citizen-charter">Citizen Charter</a></h3>
+                        </div>
+                    </div>
+                    <div style="padding-bottom:10px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="appllication colour-4">
+                            <h3><a href="https://bou.ac.bd/resources/video-gallery">Video Gallery</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-flex" style="margin-top:20px;">
+                    <div style="padding-bottom:10px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="appllication colour-5">
+                            <h3><a href="https://bou.ac.bd/resources/photo-gallery">Photo Gallery</a></h3>
+                        </div>
+                    </div>
+                    <div style="padding-bottom:10px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="appllication colour-6">
+                            <h3><a href="https://bou.ac.bd/resources/journals-magazines">Journals, Porikroma, & Magazines</a></h3>
+                        </div>
+                    </div>
+                    <div style="padding-bottom:10px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="appllication colour-7">
+                            <h3><a href="https://bou.ac.bd/resources/ebook">BOU E-Book</a></h3>
+                        </div>
+                    </div>
+                    <div style="padding-bottom:10px;" class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="appllication colour-8">
+                            <h3><a href="https://bou.ac.bd/resources/annual-report">BOU Annual Report</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UPCOMING EVENTS -->
+    <section class="pop-cour">
+        <div class="container com-sp pad-bot-70" data-aos="fade-up">
+            <div class="con-title">
+                <h2>Upcoming Events</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="event-box">
+                        <h4><a href="https://bou.ac.bd/events/workshop-2025">Workshop on Distance Learning</a></h4>
+                        <p>Date: 15 May 2025</p>
+                        <p>Location: BOU Main Campus, Gazipur</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="event-box">
+                        <h4><a href="https://bou.ac.bd/events/seminar-2025">Seminar on Educational Technology</a></h4>
+                        <p>Date: 20 May 2025</p>
+                        <p>Location: Dhaka Regional Center</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="event-box">
+                        <h4><a href="https://bou.ac.bd/events/conference-2025">International Conference on Open Education</a></h4>
+                        <p>Date: 25 May 2025</p>
+                        <p>Location: Online via BOU Open TV</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="wed-hom-footer">
+        <div class="container">
+            <div class="row wed-foot-link">
+                <div class="col-md-4 foot-tc-mar-t-o">
+                    <h4>Important Links</h4>
+                    <ul>
+                        <li><a href="https://moedu.gov.bd/">Ministry of Education</a></li>
+                        <li><a href="https://x.com/bou_official">BOU Twitter/X Account</a></li>
+                        <li><a href="https://facebook.com/bouofficial">BOU FaceBook Page</a></li>
+                        <li><a href="https://instagram.com/bou_official">BOU Instagram Account</a></li>
+                        <li><a href="https://youtube.com/bouofficial">BOU Youtube Channel</a></li>
+                        <li><a href="https://boutube.bou.ac.bd/">BOU Tube</a></li>
+                        <li><a href="https://youtube.com/bouacademic">YouTube (Academic)</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://bou.ac.bd/resources/forms">Download Forms</a></li>
+                        <li><a href="https://bou.ac.bd/resources/bou-act-rules">BOU Act/Rules</a></li>
+                        <li><a href="https://bou.ac.bd/resources/journals-magazines">Porikroma, Magazine & Journal</a></li>
+                        <li><a href="https://bou.ac.bd/resources/ebook">BOU E-Book</a></li>
+                        <li><a href="https://bou.ac.bd/resources/journal-scientific-technological-research">Journal of Scientific and Technological Research</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>BOU Location Map</h4>
+                    <a href="https://bou.ac.bd/boumap">
+                        <img src="https://bou.ac.bd/fontend/images/bou_google_map.jpg" width="100%" height="70%" alt="BOU Map">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COPY RIGHTS -->
+    <section class="wed-rights">
+        <div class="container">
+            <div class="row">
+                <div class="copy-right">
+                    <p>&copy; 2025 Bangladesh Open University. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- ENHANCED SOCIAL MEDIA AND CONTACT SECTION -->
+    <section class="pop-cour">
+        <div class="container com-sp pad-bot-70" data-aos="fade-up">
+            <div class="social-media">
+                <div class="con-title">Connect with Us</div>
+                <div class="social-icons">
+                    <div class="social-icon">
+                        <a href="https://www.facebook.com/BOU.Official.Page" target="_blank">
+                            <img src="images/icons8-facebook-48.png" alt="Facebook" class="icon">
+                            
+                        </a>
+                    </div>
+                    <div class="social-icon">
+                        <a href="https://www.youtube.com/@BangladeshOpenUniversity" target="_blank">
+                            <img src="images/icons8-youtube-24.png" alt="YouTube" class="icon">
+                            
+                        </a>
+                    </div>
+                    <div class="social-icon">
+                        <a href="https://bou.ac.bd/webtv" target="_blank">
+                            <img src="images/icons8-webex-48.png" alt="WebTV" class="icon">
+                            
+                        </a>
+                    </div>
+                    <div class="social-icon">
+                        <a href="https://bou.ac.bd/webradio" target="_blank">
+                            <img src="images/icons8-radio-station-48.png" alt="WebRadio" class="icon">
+                            
+                        </a>
+                    </div>
+                    <div class="social-icon">
+                        <a href="https://twitter.com/BOU_Official" target="_blank">
+                            <img src="images/icons8-twitter-50.png" alt="Twitter" class="icon">
+                            
+                        </a>
+                    </div>
+                    <div class="social-icon">
+                        <a href="https://instagram.com/bou_official" target="_blank">
+                            <img src="images/icons8-insta-48.png" alt="Instagram" class="icon">
+                            
+                        </a>
+                    </div>
+                    <div class="social-icon">
+                        <a href="https://linkedin.com/company/bangladesh-open-university" target="_blank">
+                            <img src="images/icons8-linkedin-50.png" alt="LinkedIn" class="icon">
+                            
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p><strong>Phone:</strong> +880-2-9811111<br>Reach our support team for assistance.</p>
+                    <p><strong>Email:</strong> <a href="mailto:contact@bou.ac.bd">contact@bou.ac.bd</a><br>Send us your queries anytime!</p>
+                    <p><strong>Calling Hours:</strong><br>Monday to Friday: 9:00 AM - 5:00 PM (BST)<br>Saturday: 10:00 AM - 2:00 PM (BST)<br>Sunday: Closed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- UPDATED VERTICAL SIDEBAR SOCIAL MEDIA SECTION -->
+    <section>
+        <div class="icon-float">
+            <ul>
+                <li>
+                    <a href="https://facebook.com/bouofficial" class="fb1">
+                        <img src="images/icons8-facebook-48.png" alt="Facebook" class="icon">
+                        
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtube.com/bouofficial" class="yt1">
+                        <img src="images/icons8-youtube-24.png" alt="YouTube" class="icon">
+                        
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/bou_official" class="sh1">
+                        <img src="images/icons8-twitter-50.png" alt="Twitter" class="icon">
+                        
+                    </a>
+                </li>
+                <li>
+                    <a href="https://instagram.com/bou_official" class="yt1">
+                        <img src="images/icons8-insta-48.png" alt="Instagram" class="icon">
+                        
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com/company/bouofficial" class="sh1">
+                        <img src="images/icons8-linkedin-50.png" alt="LinkedIn" class="icon">
+                        
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:info@bou.ac.bd" class="fb1">
+                        <img src="images/icons8-webex-48.png" alt="Email" class="icon">
+                       
+                    </a>
+                </li>
+                <li>
+                    <a href="https://bou.ac.bd/webradio" class="yt1">
+                        <img src="images/icons8-radio-station-48.png" alt="WebRadio" class="icon">
+                        
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- JAVASCRIPT SCRIPTS -->
+    <script src="https://bou.ac.bd/fontend/js/main.min.js"></script>
+    <script src="https://bou.ac.bd/fontend/js/bootstrap.min.js"></script>
+    <script src="https://bou.ac.bd/fontend/js/materialize.min.js"></script>
+    <script src="https://bou.ac.bd/fontend/js/custom.js"></script>
+    <script src="https://bou.ac.bd/fontend/js/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93e0ae29b9f053bb',t:'MTc0Njk1NjA2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

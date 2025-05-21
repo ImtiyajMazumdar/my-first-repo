@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form - Bangladesh Open University</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .error {
+            color: red;
+            font-size: 0.875rem;
+            display: none;
+            margin-top: 4px;
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #3498db;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: none;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .success-message {
+            color: green;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+        .input-field {
+            transition: border-color 0.3s;
+        }
+        .input-field:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-blue-900 text-white py-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold">Bangladesh Open University</h1>
+            <h2 class="text-xl mt-2">Online Admission Form (2025-2026 Session)</h2>
+            <nav class="mt-4">
+                <a href="index.html" class="text-white hover:text-gray-300">Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-8">
+        <section class="bg-white p-8 rounded-lg shadow-md form-container">
+            <form id="admissionForm" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Full Name -->
+                    <div>
+                        <label for="fullName" class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <input type="text" id="fullName" name="Full Name" class="w-full p-2 border rounded input-field" required>
+                        <p id="fullNameError" class="error">Please enter your full name (minimum 3 characters).</p>
+                    </div>
+
+                    <!-- Birth Certificate Number -->
+                    <div>
+                        <label for="birthCertNo" class="block text-sm font-medium text-gray-700">Birth Certificate Number</label>
+                        <input type="text" id="birthCertNo" name="Birth Certificate Number" class="w-full p-2 border rounded input-field" required>
+                        <p id="birthCertNoError" class="error">Please enter a valid birth certificate number (minimum 6 characters).</p>
+                    </div>
+
+                    <!-- Gender -->
+                    <div>
+                        <label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
+                        <select id="gender" name="Gender" class="w-full p-2 border rounded input-field" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <p id="genderError" class="error">Please select your gender.</p>
+                    </div>
+
+                    <!-- SSC Result -->
+                    <div>
+                        <label for="sscResult" class="block text-sm font-medium text-gray-700">SSC Result (GPA)</label>
+                        <input type="number" id="sscResult" name="SSC Result" step="0.01" min="0" max="5" class="w-full p-2 border rounded input-field" required>
+                        <p id="sscResultError" class="error">Please enter a valid GPA (0-5).</p>
+                    </div>
+
+                    <!-- HSC Result -->
+                    <div>
+                        <label for="hscResult" class="block text-sm font-medium text-gray-700">HSC Result (GPA)</label>
+                        <input type="number" id="hscResult" name="HSC Result" step="0.01" min="0" max="5" class="w-full p-2 border rounded input-field" required>
+                        <p id="hscResultError" class="error">Please enter a valid GPA (0-5).</p>
+                    </div>
+
+                    <!-- Section -->
+                    <div>
+                        <label for="section" class="block text-sm font-medium text-gray-700">Section</label>
+                        <select id="section" name="Section" class="w-full p-2 border rounded input-field" required>
+                            <option value="">Select Section</option>
+                            <option value="Science">Science</option>
+                            <option value="Commerce">Commerce</option>
+                            <option value="Arts">Arts</option>
+                        </select>
+                        <p id="sectionError" class="error">Please select a section.</p>
+                    </div>
+
+                    <!-- Major -->
+                    <div>
+                        <label for="major" class="block text-sm font-medium text-gray-700">Select Major</label>
+                        <select id="major" name="Major" class="w-full p-2 border rounded input-field" required>
+                            <option value="">Select Major</option>
+                            <option value="CSE">CSE (Computer Science & Engineering)</option>
+                            <option value="BBA">BBA (Business Administration)</option>
+                            <option value="EEE">EEE (Electrical & Electronic Engineering)</option>
+                            <option value="English">English</option>
+                            <option value="Law">Law</option>
+                            <option value="Bangla">Bangla</option>
+                            <option value="Geography">Geography</option>
+                        </select>
+                        <p id="majorError" class="error">Please select a major.</p>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="md:col-span-2">
+                        <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
+                        <textarea id="address" name="Address" class="w-full p-2 border rounded input-field" rows="3" required></textarea>
+                        <p id="addressError" class="error">Please enter your address (minimum 10 characters).</p>
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="Email" class="w-full p-2 border rounded input-field" required>
+                        <p id="emailError" class="error">Please enter a valid email address.</p>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                        <input type="tel" id="phone" name="Phone Number" class="w-full p-2 border rounded input-field" placeholder="+8801234567890" required>
+                        <p id="phoneError" class="error">Please enter a valid phone number (e.g., +8801234567890).</p>
+                    </div>
+
+                    <!-- Guardian Name -->
+                    <div>
+                        <label for="guardianName" class="block text-sm font-medium text-gray-700">Guardian Name</label>
+                        <input type="text" id="guardianName" name="Guardian Name" class="w-full p-2 border rounded input-field" required>
+                        <p id="guardianNameError" class="error">Please enter your guardian's name (minimum 3 characters).</p>
+                    </div>
+
+                    <!-- Guardian Phone -->
+                    <div>
+                        <label for="guardianPhone" class="block text-sm font-medium text-gray-700">Guardian Phone Number</label>
+                        <input type="tel" id="guardianPhone" name="Guardian Phone Number" class="w-full p-2 border rounded input-field" placeholder="+8801234567890" required>
+                        <p id="guardianPhoneError" class="error">Please enter a valid phone number (e.g., +8801234567890).</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center space-x-4">
+                    <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Submit Application</button>
+                    <div id="submitSpinner" class="spinner"></div>
+                </div>
+                <p id="submitMessage" class="success-message text-center"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4 text-center">
+        <p>© 2025 Bangladesh Open University. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('admissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Reset error and success messages
+            document.querySelectorAll('.error').forEach(error => error.style.display = 'none');
+            document.getElementById('submitMessage').textContent = '';
+            document.getElementById('submitSpinner').style.display = 'block';
+
+            // Get form values
+            const fullName = document.getElementById('fullName').value.trim();
+            const birthCertNo = document.getElementById('birthCertNo').value.trim();
+            const gender = document.getElementById('gender').value;
+            const sscResult = parseFloat(document.getElementById('sscResult').value);
+            const hscResult = parseFloat(document.getElementById('hscResult').value);
+            const section = document.getElementById('section').value;
+            const major = document.getElementById('major').value;
+            const address = document.getElementById('address').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const guardianName = document.getElementById('guardianName').value.trim();
+            const guardianPhone = document.getElementById('guardianPhone').value.trim();
+
+            // Validation
+            let isValid = true;
+
+            if (fullName.length < 3) {
+                document.getElementById('fullNameError').style.display = 'block';
+                isValid = false;
+            }
+            if (birthCertNo.length < 6) {
+                document.getElementById('birthCertNoError').style.display = 'block';
+                isValid = false;
+            }
+            if (!gender) {
+                document.getElementById('genderError').style.display = 'block';
+                isValid = false;
+            }
+            if (isNaN(sscResult) || sscResult < 0 || sscResult > 5) {
+                document.getElementById('sscResultError').style.display = 'block';
+                isValid = false;
+            }
+            if (isNaN(hscResult) || hscResult < 0 || hscResult > 5) {
+                document.getElementById('hscResultError').style.display = 'block';
+                isValid = false;
+            }
+            if (!section) {
+                document.getElementById('sectionError').style.display = 'block';
+                isValid = false;
+            }
+            if (!major) {
+                document.getElementById('majorError').style.display = 'block';
+                isValid = false;
+            }
+            if (address.length < 10) {
+                document.getElementById('addressError').style.display = 'block';
+                isValid = false;
+            }
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+            if (!phone || !/^\+?880\d{10}$/.test(phone)) {
+                document.getElementById('phoneError').style.display = 'block';
+                isValid = false;
+            }
+            if (guardianName.length < 3) {
+                document.getElementById('guardianNameError').style.display = 'block';
+                isValid = false;
+            }
+            if (!guardianPhone || !/^\+?880\d{10}$/.test(guardianPhone)) {
+                document.getElementById('guardianPhoneError').style.display = 'block';
+                isValid = false;
+            }
+
+            // If valid, submit to Google Sheets
+            if (isValid) {
+                const formData = {
+                    'Full Name': fullName,
+                    'Birth Certificate Number': birthCertNo,
+                    'Gender': gender,
+                    'SSC Result': sscResult,
+                    'HSC Result': hscResult,
+                    'Section': section,
+                    'Major': major,
+                    'Address': address,
+                    'Email': email,
+                    'Phone Number': phone,
+                    'Guardian Name': guardianName,
+                    'Guardian Phone Number': guardianPhone,
+                    'Submission Date': new Date().toISOString()
+                };
+
+                fetch('https://script.google.com/macros/s/AKfycbwb-_ZRMjNkRTnjNws4LpV4egIZfFWbOW0ybyDpQMfiQIhGN2AiidIbnypWhCSwZpGsyQ/exec', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                }).then(() => {
+                    document.getElementById('submitMessage').textContent = 'Application submitted successfully! Check your email for confirmation.';
+                    document.getElementById('admissionForm').reset();
+                }).catch(error => {
+                    document.getElementById('submitMessage').style.color = 'red';
+                    document.getElementById('submitMessage').textContent = 'Error submitting application. Please try again.';
+                    console.error('Error:', error);
+                }).finally(() => {
+                    document.getElementById('submitSpinner').style.display = 'none';
+                });
+            } else {
+                document.getElementById('submitSpinner').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

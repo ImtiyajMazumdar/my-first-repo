@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Login - Bangladesh Open University</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #3498db;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: none;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .password-strength {
+            height: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+        .weak { width: 33%; background-color: #ff4d4d; }
+        .medium { width: 66%; background-color: #ffaa00; }
+        .strong { width: 100%; background-color: #00cc00; }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-blue-900 text-white">
+        <div class="container mx-auto py-4">
+            <nav class="flex justify-between items-center">
+                <div class="flex space-x-4">
+                    <a href="index.html" class="hover:text-gray-300">Find Program</a>
+                    <a href="#" class="hover:text-gray-300">Student Handbooks</a>
+                    <a href="#" class="hover:text-gray-300">Online Admission</a>
+                    <a href="auth.html" class="hover:text-gray-300">Account Login</a>
+                    <a href="#" class="hover:text-gray-300">EBook</a>
+                    <a href="#" class="hover:text-gray-300">Web Email</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-8">
+        <section class="bg-white p-6 rounded-lg shadow-md max-w-md mx-auto">
+            <h2 class="text-2xl font-bold mb-4 text-center">Account Login</h2>
+
+            <div id="welcome-section" class="mb-4">
+                <p class="text-center">Welcome to BOU</p>
+                <p class="text-center mb-4">Do you have an account?</p>
+                <div class="flex justify-center space-x-4">
+                    <button id="yes-account" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Yes</button>
+                    <button id="no-account" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">No</button>
+                </div>
+            </div>
+
+            <div id="login-section" class="hidden">
+                <h3 class="text-xl font-semibold mb-4">Login</h3>
+                <div id="login-form">
+                    <div class="mb-4">
+                        <label for="login-email" class="block text-sm font-medium">Email</label>
+                        <input type="email" id="login-email" class="w-full p-2 border rounded" required>
+                        <p id="login-email-error" class="text-red-500 text-sm hidden"></p>
+                    </div>
+                    <div class="mb-4">
+                        <label for="login-password" class="block text-sm font-medium">Password</label>
+                        <input type="password" id="login-password" class="w-full p-2 border rounded" required>
+                        <p id="login-password-error" class="text-red-500 text-sm hidden"></p>
+                    </div>
+                    <div class="mb-4">
+                        <a href="#" id="forgot-password" class="text-blue-500 text-sm hover:underline">Forgot Password?</a>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button id="login-submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Login</button>
+                        <div id="login-spinner" class="spinner"></div>
+                        <button type="button" id="login-back" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Back</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="forgot-password-section" class="hidden">
+                <h3 class="text-xl font-semibold mb-4">Reset Password</h3>
+                <div id="forgot-password-form">
+                    <div class="mb-4">
+                        <label for="reset-email" class="block text-sm font-medium">Email</label>
+                        <input type="email" id="reset-email" class="w-full p-2 border rounded" required>
+                        <p id="reset-email-error" class="text-red-500 text-sm hidden"></p>
+                        <p id="reset-email-success" class="text-green-500 text-sm hidden">Password reset email sent! Check your inbox.</p>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button id="reset-submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Send Reset Email</button>
+                        <div id="reset-spinner" class="spinner"></div>
+                        <button type="button" id="reset-back" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Back</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="signup-section" class="hidden">
+                <h3 class="text-xl font-semibold mb-4">Sign Up</h3>
+                <p>Select your role:</p>
+                <div class="flex space-x-4 mb-4">
+                    <label><input type="radio" name="signup-role" value="student" checked> Student</label>
+                    <label><input type="radio" name="signup-role" value="official"> Official</label>
+                </div>
+                <div id="signup-form">
+                    <div class="mb-4">
+                        <label for="signup-name" class="block text-sm font-medium">Full Name</label>
+                        <input type="text" id="signup-name" class="w-full p-2 border rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="signup-email" class="block text-sm font-medium">Email</label>
+                        <input type="email" id="signup-email" class="w-full p-2 border rounded" required>
+                        <p id="signup-email-error" class="text-red-500 text-sm hidden"></p>
+                        <p id="signup-email-exists" class="text-red-500 text-sm hidden">This email is already registered.</p>
+                    </div>
+                    <div class="mb-4">
+                        <label for="signup-password" class="block text-sm font-medium">Password (min 6 characters)</label>
+                        <input type="password" id="signup-password" class="w-full p-2 border rounded" required>
+                        <div id="password-strength" class="password-strength"></div>
+                        <p id="signup-password-error" class="text-red-500 text-sm hidden">Password must be at least 6 characters.</p>
+                    </div>
+                    <div class="mb-4">
+                        <label id="signup-id-label" for="signup-student-id" class="block text-sm font-medium">Student ID</label>
+                        <input type="text" id="signup-student-id" class="w-full p-2 border rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="signup-department" class="block text-sm font-medium">Department</label>
+                        <input type="text" id="signup-department" class="w-full p-2 border rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="signup-phone" class="block text-sm font-medium">Phone Number</label>
+                        <input type="tel" id="signup-phone" class="w-full p-2 border rounded" required>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button id="signup-submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Sign Up</button>
+                        <div id="signup-spinner" class="spinner"></div>
+                        <button type="button" id="signup-back" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Back</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="profile-section" class="hidden">
+                <h3 class="text-xl font-semibold mb-4">User Profile</h3>
+                <p id="welcome-message" class="text-center text-green-600 mb-4"></p>
+                <div id="profile-form" class="space-y-4">
+                    <div class="mb-4">
+                        <label for="profile-name" class="block text-sm font-medium">Full Name</label>
+                        <input type="text" id="profile-name" class="w-full p-2 border rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="profile-email" class="block text-sm font-medium">Email</label>
+                        <input type="email" id="profile-email" class="w-full p-2 border rounded" readonly>
+                    </div>
+                    <div class="mb-4">
+                        <label for="profile-description" class="block text-sm font-medium">Description</label>
+                        <textarea id="profile-description" class="w-full p-2 border rounded"></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label id="profile-id-label" for="profile-student-id" class="block text-sm font-medium">Student ID</label>
+                        <input type="text" id="profile-student-id" class="w-full p-2 border rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="profile-department" class="block text-sm font-medium">Department</label>
+                        <input type="text" id="profile-department" class="w-full p-2 border rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="profile-phone" class="block text-sm font-medium">Phone Number</label>
+                        <input type="tel" id="profile-phone" class="w-full p-2 border rounded">
+                    </div>
+                    <div class="mb-4">
+                        <label for="profile-dob" class="block text-sm font-medium">Date of Birth</label>
+                        <input type="date" id="profile-dob" class="w-full p-2 border rounded">
+                    </div>
+                    <div class="mb-4">
+                        <label for="profile-password" class="block text-sm font-medium">New Password (leave blank to keep current)</label>
+                        <input type="password" id="profile-password" class="w-full p-2 border rounded">
+                        <p id="profile-password-error" class="text-red-500 text-sm hidden">Password must be at least 6 characters.</p>
+                    </div>
+                    <div class="flex justify-between">
+                        <button id="profile-submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Update Profile</button>
+                        <button type="button" id="logout" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Logout</button>
+                    </div>
+                    <p id="email-verification-status" class="text-sm text-red-500 hidden">Please verify your email before full access.</p>
+                    <div id="resend-verification" class="hidden text-center">
+                        <button id="resend-verification-btn" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Resend Verification Email</button>
+                        <div id="resend-spinner" class="spinner mt-2"></div>
+                        <p id="resend-success" class="text-green-500 text-sm hidden mt-2">Verification email resent! Check your inbox.</p>
+                        <p id="resend-error" class="text-red-500 text-sm hidden mt-2"></p>
+                    </div>
+                </div>
+                <div id="student-list-section" class="hidden mt-4">
+                    <h3 class="text-xl font-semibold mb-4">Student List (Official Only)</h3>
+                    <ul id="student-list" class="list-disc pl-5"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Important Links</h3>
+                    <ul>
+                        <li><a href="#" class="hover:text-gray-300">Ministry of Education</a></li>
+                        <li><a href="#" class="hover:text-gray-300">BOU Twitter/X Account</a></li>
+                        <li><a href="#" class="hover:text-gray-300">BOU FaceBook Page</a></li>
+                        <li><a href="#" class="hover:text-gray-300">BOU Instagram Account</a></li>
+                        <li><a href="#" class="hover:text-gray-300">BOU Youtube Channel</a></li>
+                        <li><a href="#" class="hover:text-gray-300">BOU Tube</a></li>
+                        <li><a href="#" class="hover:text-gray-300">YouTube (Academic)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul>
+                        <li><a href="#" class="hover:text-gray-300">Download Forms</a></li>
+                        <li><a href="#" class="hover:text-gray-300">BOU Act/Rules</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Porikroma, Magazine & Journal</a></li>
+                        <li><a href="#" class="hover:text-gray-300">BOU E-Book</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Journal of Scientific and Technological Research</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">BOU Location Map</h3>
+                    <div class="bg-gray-300 h-32 rounded"></div>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <p>© 2025 Bangladesh Open University. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, sendEmailVerification, signOut, onAuthStateChanged, updatePassword, setPersistence, browserSessionPersistence } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc, updateDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-firestore.js";
+        import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-analytics.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyClXphgdZI7d6AbRWCS1AHN1wM6T8MWl84",
+            authDomain: "bou-auth-system.firebaseapp.com",
+            projectId: "bou-auth-system",
+            storageBucket: "bou-auth-system.firebasestorage.app",
+            messagingSenderId: "102431913209",
+            appId: "1:102431913209:web:1277d503c7b3bd7c359e28",
+            measurementId: "G-76G940GH04"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const analytics = getAnalytics(app);
+
+        // Set session persistence for secure session handling
+        setPersistence(auth, browserSessionPersistence).catch((error) => {
+            console.error('Persistence Error:', error.message);
+        });
+
+        const welcomeSection = document.getElementById('welcome-section');
+        const loginSection = document.getElementById('login-section');
+        const signupSection = document.getElementById('signup-section');
+        const profileSection = document.getElementById('profile-section');
+        const forgotPasswordSection = document.getElementById('forgot-password-section');
+        const emailVerificationStatus = document.getElementById('email-verification-status');
+        const resendVerification = document.getElementById('resend-verification');
+        const resendVerificationBtn = document.getElementById('resend-verification-btn');
+        const welcomeMessage = document.getElementById('welcome-message');
+        const studentListSection = document.getElementById('student-list-section');
+        const studentList = document.getElementById('student-list');
+
+        const yesAccount = document.getElementById('yes-account');
+        const noAccount = document.getElementById('no-account');
+        const loginBack = document.getElementById('login-back');
+        const signupBack = document.getElementById('signup-back');
+        const logout = document.getElementById('logout');
+        const forgotPassword = document.getElementById('forgot-password');
+        const resetBack = document.getElementById('reset-back');
+        const loginSubmit = document.getElementById('login-submit');
+        const signupSubmit = document.getElementById('signup-submit');
+        const profileSubmit = document.getElementById('profile-submit');
+        const resetSubmit = document.getElementById('reset-submit');
+
+        const loginSpinner = document.getElementById('login-spinner');
+        const signupSpinner = document.getElementById('signup-spinner');
+        const resetSpinner = document.getElementById('reset-spinner');
+        const resendSpinner = document.getElementById('resend-spinner');
+        const passwordStrength = document.getElementById('password-strength');
+
+        const signupRoleRadios = document.getElementsByName('signup-role');
+        const signupIdLabel = document.getElementById('signup-id-label');
+        const profileIdLabel = document.getElementById('profile-id-label');
+
+        function sanitizeInput(input) {
+            return input.replace(/[<>"'&]/g, '');
+        }
+
+        function updatePasswordStrength(password) {
+            if (password.length < 6) {
+                passwordStrength.className = 'password-strength weak';
+            } else if (password.length < 12 || !/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+                passwordStrength.className = 'password-strength medium';
+            } else {
+                passwordStrength.className = 'password-strength strong';
+            }
+        }
+
+        function updateIdLabel(role) {
+            const labelText = role === 'official' ? 'Official ID' : 'Student ID';
+            signupIdLabel.textContent = labelText;
+            profileIdLabel.textContent = labelText;
+        }
+
+        signupRoleRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                const selectedRole = document.querySelector('input[name="signup-role"]:checked').value;
+                updateIdLabel(selectedRole);
+            });
+        });
+
+        async function loadStudentList() {
+            studentList.innerHTML = '';
+            try {
+                const querySnapshot = await getDocs(collection(db, 'users'));
+                querySnapshot.forEach((doc) => {
+                    const userData = doc.data();
+                    if (userData.role === 'student') {
+                        const li = document.createElement('li');
+                        li.textContent = `${userData.fullName} (ID: ${userData.studentId}, Phone: ${userData.phone || 'N/A'})`;
+                        studentList.appendChild(li);
+                    }
+                });
+            } catch (error) {
+                console.error('Error loading student list:', error.message);
+            }
+        }
+
+        yesAccount.addEventListener('click', () => {
+            welcomeSection.classList.add('hidden');
+            loginSection.classList.remove('hidden');
+        });
+
+        noAccount.addEventListener('click', () => {
+            welcomeSection.classList.add('hidden');
+            signupSection.classList.remove('hidden');
+        });
+
+        loginBack.addEventListener('click', () => {
+            loginSection.classList.add('hidden');
+            welcomeSection.classList.remove('hidden');
+        });
+
+        signupBack.addEventListener('click', () => {
+            signupSection.classList.add('hidden');
+            welcomeSection.classList.remove('hidden');
+        });
+
+        forgotPassword.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginSection.classList.add('hidden');
+            forgotPasswordSection.classList.remove('hidden');
+        });
+
+        resetBack.addEventListener('click', () => {
+            forgotPasswordSection.classList.add('hidden');
+            loginSection.classList.remove('hidden');
+        });
+
+        loginSubmit.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginSpinner.style.display = 'block';
+            const email = sanitizeInput(document.getElementById('login-email').value.trim());
+            const password = document.getElementById('login-password').value;
+            const passwordError = document.getElementById('login-password-error');
+            const emailError = document.getElementById('login-email-error');
+
+            passwordError.classList.add('hidden');
+            emailError.classList.add('hidden');
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    return getDoc(doc(db, 'users', user.uid)).then((docSnap) => {
+                        if (!docSnap.exists()) {
+                            throw new Error('User data not found.');
+                        }
+                        loginSection.classList.add('hidden');
+                        profileSection.classList.remove('hidden');
+                        loadUserProfile(user.uid);
+                    });
+                })
+                .catch((error) => {
+                    logEvent(analytics, 'login_error', { error_code: error.code, error_message: error.message });
+                    console.error('Login Error:', error.message);
+                    if (error.code === 'auth/user-not-found') {
+                        emailError.textContent = 'This email is not registered.';
+                        emailError.classList.remove('hidden');
+                    } else if (error.code === 'auth/wrong-password') {
+                        passwordError.textContent = 'Incorrect password.';
+                        passwordError.classList.remove('hidden');
+                    } else if (error.code === 'auth/invalid-email') {
+                        emailError.textContent = 'Please enter a valid email address.';
+                        emailError.classList.remove('hidden');
+                    } else {
+                        passwordError.textContent = 'Error: ' + error.message;
+                        passwordError.classList.remove('hidden');
+                    }
+                })
+                .finally(() => {
+                    loginSpinner.style.display = 'none';
+                });
+        });
+
+        resetSubmit.addEventListener('click', (e) => {
+            e.preventDefault();
+            resetSpinner.style.display = 'block';
+            const email = sanitizeInput(document.getElementById('reset-email').value.trim());
+            const emailError = document.getElementById('reset-email-error');
+            const emailSuccess = document.getElementById('reset-email-success');
+
+            emailError.classList.add('hidden');
+            emailSuccess.classList.add('hidden');
+
+            sendPasswordResetEmail(auth, email)
+                .then(() => {
+                    emailSuccess.classList.remove('hidden');
+                })
+                .catch((error) => {
+                    logEvent(analytics, 'reset_password_error', { error_code: error.code, error_message: error.message });
+                    console.error('Reset Password Error:', error.message);
+                    emailError.textContent = 'Error: ' + error.message;
+                    emailError.classList.remove('hidden');
+                })
+                .finally(() => {
+                    resetSpinner.style.display = 'none';
+                });
+        });
+
+        signupSubmit.addEventListener('click', (e) => {
+            e.preventDefault();
+            signupSpinner.style.display = 'block';
+            const name = sanitizeInput(document.getElementById('signup-name').value);
+            const email = sanitizeInput(document.getElementById('signup-email').value.trim());
+            const password = document.getElementById('signup-password').value;
+            const studentId = sanitizeInput(document.getElementById('signup-student-id').value);
+            const department = sanitizeInput(document.getElementById('signup-department').value);
+            const phone = sanitizeInput(document.getElementById('signup-phone').value);
+            const role = document.querySelector('input[name="signup-role"]:checked').value;
+            const emailError = document.getElementById('signup-email-error');
+            const passwordError = document.getElementById('signup-password-error');
+            const emailExistsError = document.getElementById('signup-email-exists');
+
+            emailError.classList.add('hidden');
+            passwordError.classList.add('hidden');
+            emailExistsError.classList.add('hidden');
+
+            if (password.length < 6) {
+                passwordError.classList.remove('hidden');
+                signupSpinner.style.display = 'none';
+                return;
+            }
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    return setDoc(doc(db, 'users', user.uid), {
+                        fullName: name,
+                        email: email,
+                        studentId: studentId,
+                        department: department,
+                        phone: phone,
+                        role: role,
+                        description: '',
+                        dob: ''
+                    }).then(() => {
+                        sendEmailVerification(user)
+                            .then(() => {
+                                alert('Verification email sent! Please check your inbox.');
+                                signupSection.classList.add('hidden');
+                                profileSection.classList.remove('hidden');
+                                loadUserProfile(user.uid);
+                            })
+                            .catch((error) => {
+                                logEvent(analytics, 'email_verification_error', { error_code: error.code, error_message: error.message });
+                                console.error('Verification Error:', error.message);
+                                alert('Error sending verification email: ' + error.message);
+                            });
+                    });
+                })
+                .catch((error) => {
+                    logEvent(analytics, 'signup_error', { error_code: error.code, error_message: error.message });
+                    console.error('Signup Error:', error.message);
+                    if (error.code === 'auth/email-already-in-use') {
+                        emailExistsError.classList.remove('hidden');
+                    } else if (error.code === 'auth/invalid-email') {
+                        emailError.textContent = 'Please enter a valid email address.';
+                        emailError.classList.remove('hidden');
+                    } else {
+                        emailError.textContent = 'Error: ' + error.message;
+                        emailError.classList.remove('hidden');
+                    }
+                })
+                .finally(() => {
+                    signupSpinner.style.display = 'none';
+                });
+        });
+
+        document.getElementById('signup-password').addEventListener('input', (e) => {
+            updatePasswordStrength(e.target.value);
+        });
+
+        resendVerificationBtn.addEventListener('click', () => {
+            resendSpinner.style.display = 'block';
+            const resendSuccess = document.getElementById('resend-success');
+            const resendError = document.getElementById('resend-error');
+            resendSuccess.classList.add('hidden');
+            resendError.classList.add('hidden');
+
+            sendEmailVerification(auth.currentUser)
+                .then(() => {
+                    resendSuccess.classList.remove('hidden');
+                })
+                .catch((error) => {
+                    logEvent(analytics, 'resend_verification_error', { error_code: error.code, error_message: error.message });
+                    console.error('Resend Verification Error:', error.message);
+                    resendError.textContent = 'Error: ' + error.message;
+                    resendError.classList.remove('hidden');
+                })
+                .finally(() => {
+                    resendSpinner.style.display = 'none';
+                });
+        });
+
+        async function loadUserProfile(uid) {
+            try {
+                const docSnap = await getDoc(doc(db, 'users', uid));
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    document.getElementById('profile-name').value = data.fullName || '';
+                    document.getElementById('profile-email').value = data.email || '';
+                    document.getElementById('profile-description').value = data.description || '';
+                    document.getElementById('profile-student-id').value = data.studentId || '';
+                    document.getElementById('profile-department').value = data.department || '';
+                    document.getElementById('profile-phone').value = data.phone || '';
+                    document.getElementById('profile-dob').value = data.dob || '';
+                    welcomeMessage.textContent = `Welcome back, ${data.fullName}!`;
+                    updateIdLabel(data.role);
+                    if (data.role === 'official') {
+                        studentListSection.classList.remove('hidden');
+                        loadStudentList();
+                    } else {
+                        studentListSection.classList.add('hidden');
+                    }
+                } else {
+                    console.error('User profile not found.');
+                }
+            } catch (error) {
+                console.error('Error loading user profile:', error.message);
+            }
+        }
+
+        profileSubmit.addEventListener('click', (e) => {
+            e.preventDefault();
+            const name = sanitizeInput(document.getElementById('profile-name').value);
+            const description = sanitizeInput(document.getElementById('profile-description').value);
+            const studentId = sanitizeInput(document.getElementById('profile-student-id').value);
+            const department = sanitizeInput(document.getElementById('profile-department').value);
+            const phone = sanitizeInput(document.getElementById('profile-phone').value);
+            const dob = document.getElementById('profile-dob').value;
+            const newPassword = document.getElementById('profile-password').value;
+
+            const user = auth.currentUser;
+            if (newPassword && newPassword.length < 6) {
+                document.getElementById('profile-password-error').classList.remove('hidden');
+                return;
+            }
+
+            updateDoc(doc(db, 'users', user.uid), {
+                fullName: name,
+                description: description,
+                studentId: studentId,
+                department: department,
+                phone: phone,
+                dob: dob
+            }).then(() => {
+                if (newPassword) {
+                    updatePassword(user, newPassword).then(() => {
+                        alert('Profile and password updated successfully!');
+                    }).catch((error) => {
+                        logEvent(analytics, 'update_password_error', { error_code: error.code, error_message: error.message });
+                        alert('Error updating password: ' + error.message);
+                    });
+                } else {
+                    alert('Profile updated successfully!');
+                }
+            }).catch((error) => {
+                logEvent(analytics, 'update_profile_error', { error_code: error.code, error_message: error.message });
+                alert('Error updating profile: ' + error.message);
+            });
+        });
+
+        logout.addEventListener('click', () => {
+            signOut(auth).then(() => {
+                profileSection.classList.add('hidden');
+                welcomeSection.classList.remove('hidden');
+            }).catch((error) => {
+                console.error('Logout Error:', error.message);
+            });
+        });
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                if (!user.emailVerified) {
+                    emailVerificationStatus.classList.remove('hidden');
+                    resendVerification.classList.remove('hidden');
+                } else {
+                    emailVerificationStatus.classList.add('hidden');
+                    resendVerification.classList.add('hidden');
+                }
+                welcomeSection.classList.add('hidden');
+                loginSection.classList.add('hidden');
+                signupSection.classList.add('hidden');
+                forgotPasswordSection.classList.add('hidden');
+                profileSection.classList.remove('hidden');
+                loadUserProfile(user.uid);
+            } else {
+                profileSection.classList.add('hidden');
+                welcomeSection.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
