@@ -1,533 +1,161 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Frequently Asked Questions - Bangladesh Open University (BOU)</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keyword" content="Bangladesh Open University, BOU, FAQ, Open and Distance Learning, Admission, Study Centers">
-    <link rel="shortcut icon" href="https://bou.ac.bd/fontend/images/favi.jpg" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://bou.ac.bd/fontend/css/font-awesome.min.css">
-    <link href="https://bou.ac.bd/fontend/css/materialize.css" rel="stylesheet">
-    <link href="https://bou.ac.bd/fontend/css/bootstrap.css" rel="stylesheet" />
-    <link href="https://bou.ac.bd/fontend/css/style.css" rel="stylesheet" />
-    <link href="https://bou.ac.bd/fontend/css/gallery_style.css" rel="stylesheet" />
-    <link href="https://bou.ac.bd/fontend/css/aos.css" rel="stylesheet">
-    <link href="https://bou.ac.bd/fontend/css/style-mob.css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Bangladesh Open University</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <style>
-        .faq-section {
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
             padding: 20px;
-            margin-bottom: 20px;
         }
-        .faq-section h3 {
-            color: #225C9E;
-            font-size: 20px;
-            margin-bottom: 15px;
+        .faq-question {
+            background-color: #f9fafb;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
         }
-        .faq-section p {
-            font-size: 16px;
-            color: #333;
-            margin: 10px 0;
-            line-height: 1.5;
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background-color: #eef2f7;
+            margin-top: 5px;
+            border-radius: 5px;
         }
-        .faq-section .question {
-            font-weight: bold;
-            color: #225C9E;
+        .form-container {
+            margin-top: 20px;
         }
-        .pop-cour {
-            background: linear-gradient(135deg, #e6f0fa 0%, #d0e0f0 100%);
-            padding: 40px 0;
-            border-top: 5px solid #225C9E;
-            border-bottom: 5px solid #225C9E;
-            margin-bottom: 30px;
+        .question-entry {
+            background-color: #f9fafb;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
         }
-        .con-title {
-            color: #225C9E;
-            font-size: 28px;
-            font-family: 'Arial', sans-serif;
-            font-weight: bold;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            width: 100%;
+        .loading {
             text-align: center;
+            color: #666;
         }
     </style>
 </head>
-<body>
-    <!-- MOBILE MENU -->
-    <section>
-        <div class="ed-mob-menu">
-            <div class="ed-mob-menu-con">
-                <div class="ed-mm-left">
-                    <div class="wed-logo">
-                        <a href="index.html"><img src="https://bou.ac.bd/fontend/images/bou_logo.jpg" alt="BOU Logo" /></a>
-                    </div>
-                </div>
-                <div class="ed-mm-right">
-                    <div class="ed-mm-menu">
-                        <a href="#!" class="ed-micon"><i class="fa fa-bars"></i></a>
-                        <div class="ed-mm-inn">
-                            <a href="#!" class="ed-micon"><i class="fa fa-times"></i></a>
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="#">About</a>
-                                    <ul>
-                                        <li><a href="chancellor.html">Chancellor</a></li>
-                                        <li><a href="https://bou.ac.bd/page/vice-chancellor">Vice Chancellor</a></li>
-                                        <li><a href="https://bou.ac.bd/page/pro-vice-chancellor-academic">Pro-Vice Chancellor (Academic)</a></li>
-                                        <li><a href="https://bou.ac.bd/page/pro-vice-chancellor-administration">Pro-Vice Chancellor (Administration)</a></li>
-                                        <li><a href="https://bou.ac.bd/page/treasurer">Treasurer</a></li>
-                                        <li><a href="https://bou.ac.bd/page/registrar">Registrar</a></li>
-                                        <li><a href="former-vc.html">Former Vice Chancellors</a></li>
-                                        <li><a href="faq.html">FAQ</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Academic</a>
-                                    <ul>
-                                        <li><a href="school-of-education.html">School of Education</a></li>
-                                        <li><a href="https://bou.ac.bd/academic/school-of-social-science-humanities-languages">School of Social Science, Humanities & Languages</a></li>
-                                        <li><a href="https://bou.ac.bd/academic/open-school">Open School</a></li>
-                                        <li><a href="https://bou.ac.bd/academic/school-of-business">School of Business</a></li>
-                                        <li><a href="https://bou.ac.bd/academic/school-of-agriculture-rural-development">School of Agriculture & Rural Development</a></li>
-                                        <li><a href="https://bou.ac.bd/academic/school-of-science-technology">School of Science & Technology</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Journal</a>
-                                    <ul>
-                                        <li><a href="https://bou.ac.bd/journal/school-of-education">School of Education</a></li>
-                                        <li><a href="https://bou.ac.bd/journal/school-of-social-sciences-humanities-languages">School of Social Sciences, Humanities, & Languages</a></li>
-                                        <li><a href="https://bou.ac.bd/journal/open-school">Open School</a></li>
-                                        <li><a href="https://bou.ac.bd/journal/school-of-business">School of Business</a></li>
-                                        <li><a href="https://bou.ac.bd/journal/school-of-agriculture-rural-development">School of Agriculture & Rural Development</a></li>
-                                        <li><a href="https://bou.ac.bd/journal/school-of-science-technology">School of Science & Technology</a></li>
-                                        <li><a href="https://bou.ac.bd/journal/call-for-paper-jard">Call for Paper (JARD)</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Division</a>
-                                    <ul>
-                                        <li><a href="https://bou.ac.bd/division/administration">Administration</a></li>
-                                        <li><a href="https://bou.ac.bd/division/computer">Computer</a></li>
-                                        <li><a href="https://bou.ac.bd/division/engineering-estate">Engineering & Estate</a></li>
-                                        <li><a href="https://bou.ac.bd/division/examination">Examination</a></li>
-                                        <li><a href="https://bou.ac.bd/division/finance-accounts">Finance & Accounts</a></li>
-                                        <li><a href="https://bou.ac.bd/division/information-public-relation">Information & Public Relation</a></li>
-                                        <li><a href="https://bou.ac.bd/division/library-documentation">Library & Documentation</a></li>
-                                        <li><a href="https://bou.ac.bd/division/media-division">Media Division</a></li>
-                                        <li><a href="https://bou.ac.bd/division/planning-development">Planning & Development</a></li>
-                                        <li><a href="https://bou.ac.bd/division/publishing-printing-distribution">Publishing, Printing & Distribution</a></li>
-                                        <li><a href="https://bou.ac.bd/division/student-support-services">Student Support Services</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Regional Centers</a>
-                                    <ul>
-                                        <li><a href="regional-center-dhaka.html">Dhaka</a></li>
-                                        <li><a href="https://bou.ac.bd/regional-center/chattogram">Chattogram</a></li>
-                                        <li><a href="https://bou.ac.bd/regional-center/rajshahi">Rajshahi</a></li>
-                                        <li><a href="https://bou.ac.bd/regional-center/khulna">Khulna</a></li>
-                                        <li><a href="https://bou.ac.bd/regional-center/sylhet">Sylhet</a></li>
-                                        <li><a href="https://bou.ac.bd/regional-center/barishal">Barishal</a></li>
-                                        <li><a href="https://bou.ac.bd/regional-center/rangpur">Rangpur</a></li>
-                                        <li><a href="https://bou.ac.bd/regional-center/mymensingh">Mymensingh</a></li>
-                                        <li><a href="https://bou.ac.bd/regional-center/cumilla">Cumilla</a></li>
-                                        <li><a href="https://bou.ac.bd/regional-center/bogura">Bogura</a></li>
-                                        <li><a href="https://bou.ac.bd/regional-center/jashore">Jashore</a></li>
-                                        <li><a href="https://bou.ac.bd/regional-center/faridpur">Faridpur</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Results</a>
-                                    <ul>
-                                        <li><a href="https://bou.ac.bd/results/final-year-semester">Result (Final/Year/Semester)</a></li>
-                                        <li><a href="https://bou.ac.bd/results/complaint-services">Complaint & Other Services</a></li>
-                                        <li><a href="https://bou.ac.bd/results/result-news">Result News</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Notice</a>
-                                    <ul>
-                                        <li><a href="https://bou.ac.bd/notice/admission">Admission</a></li>
-                                        <li><a href="https://bou.ac.bd/notice/examination">Examination</a></li>
-                                        <li><a href="https://bou.ac.bd/notice/registration-class">Registration/Class</a></li>
-                                        <li><a href="https://bou.ac.bd/notice/result-news">Result News</a></li>
-                                        <li><a href="https://bou.ac.bd/notice/administrative">Administrative</a></li>
-                                        <li><a href="https://bou.ac.bd/notice/recruitment">Recruitment</a></li>
-                                        <li><a href="https://bou.ac.bd/notice/noc-office-order">NOC/Office Order</a></li>
-                                        <li><a href="https://bou.ac.bd/notice/tender-procurement">Tender/Procurement</a></li>
-                                        <li><a href="https://bou.ac.bd/notice/transfer-order">Transfer Order</a></li>
-                                        <li><a href="https://bou.ac.bd/notice/national-days">National Days</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="https://bou.ac.bd/admission">Admission</a></li>
-                                <li><a href="#">Contact</a>
-                                    <ul>
-                                        <li><a href="https://bou.ac.bd/contact/main-campus">Main Campus</a></li>
-                                        <li><a href="https://bou.ac.bd/contact/regional-center">Regional Center</a></li>
-                                        <li><a href="https://bou.ac.bd/contact/sub-regional-center">Sub-Regional Center</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="faq.html">FAQs</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-blue-900 text-white py-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold">Bangladesh Open University</h1>
+            <h2 class="text-xl mt-2">FAQ Section</h2>
+            <nav class="mt-4">
+                <a href="index.html" class="text-white hover:text-gray-300">Back to Home</a>
+            </nav>
         </div>
-    </section>
-    <!-- HEADER -->
-    <section>
-        <div class="ed-top">
-            <div class="container">
-                <div class="row">
-                    <div class="ed-com-t1-right">
-                        <ul>
-                            <li>
-                                <a href="https://bou.ac.bd/program-finder" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i> Find Program</a>
-                                <a href="https://bou.ac.bd/student-handbooks" class="btn btn-default"><i class="fa fa-book" aria-hidden="true"></i> Student Handbooks</a>
-                                <a href="https://bou.ac.bd/online-admission" class="btn btn-default"><i class="fa fa-plus" aria-hidden="true"></i> Online Admission</a>
-                                <a href="auth.html" class="btn btn-default"><i class="fa fa-user" aria-hidden="true"></i>Account Login</a>
-                                <a href="https://bou.ac.bd/ebook" class="btn btn-default"><i class="fa fa-book" aria-hidden="true"></i> EBook</a>
-                                <a href="https://bou.ac.bd/web-email" class="btn btn-default"><i class="fa fa-envelope" aria-hidden="true"></i> Web Email</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+    </header>
+
+    <main class="container mx-auto py-8">
+        <section class="bg-white p-8 rounded-lg shadow-md faq-container">
+            <h3 class="text-lg font-semibold mb-4">Frequently Asked Questions</h3>
+            <div id="faqSection" class="space-y-2">
+                <div class="faq-question" onclick="toggleAnswer(this)">What are the admission requirements?</div>
+                <div class="faq-answer">You need a minimum SSC and HSC result of 3.0 GPA, along with a valid birth certificate.</div>
+                <div class="faq-question" onclick="toggleAnswer(this)">When does the semester start?</div>
+                <div class="faq-answer">The semester typically starts in January and July each year.</div>
+                <div class="faq-question" onclick="toggleAnswer(this)">How can I contact support?</div>
+                <div class="faq-answer">You can email support@bou.edu or call +880123456789.</div>
             </div>
-        </div>
-        <div class="top-logo" data-spy="affix" data-offset-top="250">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="wed-logo">
-                            <a href="index.html"><img src="https://bou.ac.bd/fontend/images/bou_logo.jpg" alt="BOU Logo" /></a>
-                        </div>
-                        <div class="main-menu">
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li class="about-menu">
-                                    <a href="#" class="mm-arr">About</a>
-                                    <div class="mm-pos">
-                                        <div class="about-mm m-menu">
-                                            <div class="m-menu-inn">
-                                                <div class="mm1-com mm1-s1">
-                                                    <h4 style="color:blue;font-weight:bold; font-size:16px;">Officials</h4>
-                                                    <ul>
-                                                        <li><a href="chancellor.html">Chancellor</a></li>
-                                                        <li><a href="https://bou.ac.bd/page/vice-chancellor">Vice Chancellor</a></li>
-                                                        <li><a href="https://bou.ac.bd/page/pro-vice-chancellor-academic">Pro-Vice Chancellor (Academic)</a></li>
-                                                        <li><a href="https://bou.ac.bd/page/pro-vice-chancellor-administration">Pro-Vice Chancellor (Administration)</a></li>
-                                                        <li><a href="https://bou.ac.bd/page/treasurer">Treasurer</a></li>
-                                                        <li><a href="https://bou.ac.bd/page/registrar">Registrar</a></li>
-                                                        <li><a href="former-vc.html">Former Vice Chancellors</a></li>
-                                                        <li><a href="faq.html">FAQ</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="mm1-com mm1-s1">
-                                                    <h4 style="color:blue;font-weight:bold; font-size:16px;">About University</h4>
-                                                    <ul>
-                                                        <li><a href="https://bou.ac.bd/page/professor-emeritus">Professor Emeritus</a></li>
-                                                        <li><a href="https://bou.ac.bd/page/bou-at-a-glance">BOU At a Glance</a></li>
-                                                        <li><a href="https://bou.ac.bd/page/organogram">Organogram</a></li>
-                                                        <li><a href="#"><b>Statutory Bodies</b></a>
-                                                            <ul>
-                                                                <li><a href="https://bou.ac.bd/page/board-of-governors">Board of Governors</a></li>
-                                                                <li><a href="https://bou.ac.bd/page/academic-council">Academic Council</a></li>
-                                                                <li><a href="https://bou.ac.bd/page/finance-committee">Finance Committee</a></li>
-                                                                <li><a href="https://bou.ac.bd/page/works-committee">Works Committee</a></li>
-                                                                <li><a href="https://bou.ac.bd/page/academic-planning-committee">Academic Planning Committee</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="cour-menu">
-                                    <a href="#" class="mm-arr">Academic</a>
-                                    <div class="mm-pos">
-                                        <div class="cour-mm m-menu">
-                                            <div class="m-menu-inn">
-                                                <div class="mm1-com mm1-s1">
-                                                    <ul>
-                                                        <li><a href="school-of-education.html">School of Education</a></li>
-                                                        <li><a href="https://bou.ac.bd/academic/school-of-social-science-humanities-languages">School of Social Science, Humanities & Languages</a></li>
-                                                        <li><a href="https://bou.ac.bd/academic/open-school">Open School</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="mm1-com mm1-s1">
-                                                    <ul>
-                                                        <li><a href="https://bou.ac.bd/academic/school-of-business">School of Business</a></li>
-                                                        <li><a href="https://bou.ac.bd/academic/school-of-agriculture-rural-development">School of Agriculture & Rural Development</a></li>
-                                                        <li><a href="https://bou.ac.bd/academic/school-of-science-technology">School of Science & Technology</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="journal-menu">
-                                    <a href="#" class="mm-arr">Journal</a>
-                                    <div class="mm-pos">
-                                        <div class="journal-mm m-menu">
-                                            <div class="m-menu-inn">
-                                                <div style="width:200px;" class="mm1-com mm1-s1">
-                                                    <ul>
-                                                        <li><a href="https://bou.ac.bd/journal/school-of-education">School of Education</a></li>
-                                                        <li><a href="https://bou.ac.bd/journal/school-of-social-sciences-humanities-languages">School of Social Sciences, Humanities, & Languages</a></li>
-                                                        <li><a href="https://bou.ac.bd/journal/open-school">Open School</a></li>
-                                                        <li><a href="https://bou.ac.bd/journal/school-of-business">School of Business</a></li>
-                                                        <li><a href="https://bou.ac.bd/journal/school-of-agriculture-rural-development">School of Agriculture & Rural Development</a></li>
-                                                        <li><a href="https://bou.ac.bd/journal/school-of-science-technology">School of Science & Technology</a></li>
-                                                        <b style="color:blue;">Journal News:</b>
-                                                        <ul>
-                                                            <li><a style="font-size:14px;" href="https://bou.ac.bd/journal/call-for-paper-jard">Call for Paper (JARD)</a></li>
-                                                        </ul>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="division-menu">
-                                    <a href="#" class="mm-arr">Division</a>
-                                    <div class="mm-pos">
-                                        <div class="division-mm m-menu">
-                                            <div class="m-menu-inn">
-                                                <div class="mm1-com mm1-s1">
-                                                    <h4>Division</h4>
-                                                    <ul>
-                                                        <li><a href="https://bou.ac.bd/division/administration">Administration</a></li>
-                                                        <li><a href="https://bou.ac.bd/division/computer">Computer</a></li>
-                                                        <li><a href="https://bou.ac.bd/division/engineering-estate">Engineering & Estate</a></li>
-                                                        <li><a href="https://bou.ac.bd/division/examination">Examination</a></li>
-                                                        <li><a href="https://bou.ac.bd/division/finance-accounts">Finance & Accounts</a></li>
-                                                        <li><a href="https://bou.ac.bd/division/information-public-relation">Information & Public Relation</a></li>
-                                                        <li><a href="https://bou.ac.bd/division/library-documentation">Library & Documentation</a></li>
-                                                        <li><a href="https://bou.ac.bd/division/media-division">Media Division</a></li>
-                                                        <li><a href="https://bou.ac.bd/division/planning-development">Planning & Development</a></li>
-                                                        <li><a href="https://bou.ac.bd/division/publishing-printing-distribution">Publishing, Printing & Distribution</a></li>
-                                                        <li><a href="https://bou.ac.bd/division/student-support-services">Student Support Services</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="mm1-com mm1-s1">
-                                                    <h4>Center/Cell/Wing</h4>
-                                                    <ul>
-                                                        <li><a href="https://bou.ac.bd/center/centre-for-research-on-liberation-war">Centre for Research on Liberation War</a></li>
-                                                        <li><a href="https://bou.ac.bd/center/institutional-quality-assurance-cell">Institutional Quality Assurance Cell</a></li>
-                                                        <li><a href="https://bou.ac.bd/center/ict-unit">ICT Unit</a></li>
-                                                        <li><a href="https://bou.ac.bd/center/audit-cell">Audit Cell</a></li>
-                                                        <li><a href="https://bou.ac.bd/center/international-academic-program-wing">International Academic Program Wing</a></li>
-                                                        <li><a href="https://bou.ac.bd/center/bou-earn-cell">BOU EARN Cell (BEC)</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="rc-menu">
-                                    <a href="#" class="mm-arr">Regional Centers</a>
-                                    <div class="mm-pos">
-                                        <div class="rc-mm m-menu">
-                                            <div class="m-menu-inn">
-                                                <div class="mm1-com mm1-s1">
-                                                    <ul>
-                                                        <li><a href="regional-center-dhaka.html">Dhaka</a></li>
-                                                        <li><a href="https://bou.ac.bd/regional-center/chattogram">Chattogram</a></li>
-                                                        <li><a href="https://bou.ac.bd/regional-center/rajshahi">Rajshahi</a></li>
-                                                        <li><a href="https://bou.ac.bd/regional-center/khulna">Khulna</a></li>
-                                                        <li><a href="https://bou.ac.bd/regional-center/sylhet">Sylhet</a></li>
-                                                        <li><a href="https://bou.ac.bd/regional-center/barishal">Barishal</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="mm1-com mm1-s1">
-                                                    <ul>
-                                                        <li><a href="https://bou.ac.bd/regional-center/rangpur">Rangpur</a></li>
-                                                        <li><a href="https://bou.ac.bd/regional-center/mymensingh">Mymensingh</a></li>
-                                                        <li><a href="https://bou.ac.bd/regional-center/cumilla">Cumilla</a></li>
-                                                        <li><a href="https://bou.ac.bd/regional-center/bogura">Bogura</a></li>
-                                                        <li><a href="https://bou.ac.bd/regional-center/jashore">Jashore</a></li>
-                                                        <li><a href="https://bou.ac.bd/regional-center/faridpur">Faridpur</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="admi-menu">
-                                    <a href="#" class="mm-arr">Results</a>
-                                    <div class="mm-pos">
-                                        <div class="admi-mm m-menu">
-                                            <div class="m-menu-inn">
-                                                <div class="mm1-com mm1-s1">
-                                                    <ul>
-                                                        <li><a href="https://bou.ac.bd/results/final-year-semester">Result (Final/Year/Semester)</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="mm1-com mm1-s1">
-                                                    <ul>
-                                                        <li><a href="https://bou.ac.bd/results/complaint-services">Complaint & Other Services</a></li>
-                                                        <li><a href="https://bou.ac.bd/results/result-news">Result News</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="academic-menu">
-                                    <a href="#" class="mm-arr">Notice</a>
-                                    <div class="mm-pos">
-                                        <div class="academic-mm m-menu">
-                                            <div class="m-menu-inn">
-                                                <div class="mm1-com mm1-s1">
-                                                    <h4>Academic</h4>
-                                                    <ul>
-                                                        <li><a href="https://bou.ac.bd/notice/admission">Admission</a></li>
-                                                        <li><a href="https://bou.ac.bd/notice/examination">Examination</a></li>
-                                                        <li><a href="https://bou.ac.bd/notice/registration-class">Registration/Class</a></li>
-                                                        <li><a href="https://bou.ac.bd/notice/result-news">Result News</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="mm1-com mm1-s1">
-                                                    <h4>Administrative</h4>
-                                                    <ul>
-                                                        <li><a href="https://bou.ac.bd/notice/administrative">Administrative</a></li>
-                                                        <li><a href="https://bou.ac.bd/notice/recruitment">Recruitment</a></li>
-                                                        <li><a href="https://bou.ac.bd/notice/noc-office-order">NOC/Office Order</a></li>
-                                                        <li><a href="https://bou.ac.bd/notice/tender-procurement">Tender/Procurement</a></li>
-                                                        <li><a href="https://bou.ac.bd/notice/transfer-order">Transfer Order</a></li>
-                                                        <li><a href="https://bou.ac.bd/notice/national-days">National Days</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li><a href="https://bou.ac.bd/admission">Admission</a></li>
-                                <li class="contact-menu">
-                                    <a href="#" class="mm-arr">Contact</a>
-                                    <div class="mm-pos">
-                                        <div class="contact-mm m-menu">
-                                            <div class="m-menu-inn">
-                                                <div style="width:200px;" class="mm1-com mm1-s1">
-                                                    <ul>
-                                                        <li><a href="https://bou.ac.bd/contact/main-campus">Main Campus</a></li>
-                                                        <li><a href="https://bou.ac.bd/contact/regional-center">Regional Center</a></li>
-                                                        <li><a href="https://bou.ac.bd/contact/sub-regional-center">Sub-Regional Center</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li><a href="faq.html">FAQs</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
+            <div class="form-container">
+                <h3 class="text-lg font-semibold mb-4 mt-6">Ask a Question</h3>
+                <textarea id="newQuestion" placeholder="State your problem or question here..." class="w-full p-2 mb-2 border rounded" rows="3"></textarea>
+                <button onclick="submitQuestion()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Submit Question</button>
+                <div id="questionMessage" class="mt-2"></div>
             </div>
-        </div>
-    </section>
-    <!-- FAQ SECTION -->
-    <section class="pop-cour">
-        <div class="container com-sp pad-bot-70" data-aos="fade-up">
-            <div class="con-title">
-                <h2>Frequently Asked Questions</h2>
+
+            <h3 class="text-lg font-semibold mb-4 mt-6">Submitted Questions</h3>
+            <div id="questionList" class="space-y-4">
+                <p class="loading">Loading questions...</p>
             </div>
-            <div class="faq-section">
-                <h3>Admissions</h3>
-                <p class="question">1. How can I apply for SSC, HSC, or BA/BSS programs?</p>
-                <p>To apply for SSC or HSC programs, visit <a href="https://osapsnew.bou.ac.bd">osapsnew.bou.ac.bd</a>, select the Open School option, and click "Apply Now" for the desired program. Choose your subjects, complete the online payment, and submit required documents to the designated school/college. For BA/BSS programs, follow the same process and submit documents to the BOU office in your district. For other programs, check the admission circular in the Academic Info > Admission menu or the "View Details" section on the OSAPS website.</p>[](https://www.bou.ac.bd/About/FAQ)
-                
-                <p class="question">2. What should I do if I entered incorrect information during the online application?</p>
-                <p>Contact the OSAPS Helpline at 01618-977237 or 01907-451612 (Sunday to Thursday, 8:30 AM to 3:30 PM) or email <a href="mailto:help.osaps@bou.ac.bd">help.osaps@bou.ac.bd</a> to request corrections.</p>[](https://bougovbd.com/faqs)
-                
-                <p class="question">3. Can students with a 4-year diploma apply for the BA/BSS program?</p>
-                <p>Yes, students who have completed a 4-year diploma equivalent to HSC can apply for the BA/BSS program.</p>[](https://www.bou.ac.bd/About/FAQ)
-                
-                <p class="question">4. How do I find out if admissions are open for a specific program?</p>
-                <p>Check the Academic Info > Admission menu on <a href="https://bou.ac.bd">bou.ac.bd</a> for the latest admission circular or visit <a href="https://osapsnew.bou.ac.bd">osapsnew.bou.ac.bd</a> and review the "Offered Programs" section.</p>[](https://bougovbd.com/faqs)
-            </div>
-            <div class="faq-section">
-                <h3>Study Centers</h3>
-                <p class="question">5. Where are the study centers for LLB, BA/BSS Honors, or Master’s programs?</p>
-                <p>LLB and BA/BSS Honors programs are currently offered only at the BOU Dhaka Regional Center. Master’s programs may have additional study centers; check <a href="https://osapsnew.bou.ac.bd">osapsnew.bou.ac.bd</a> during the application process for a list of study centers in your selected district. You can also contact your district’s BOU office for details.</p>[](https://bougovbd.com/faqs)
-                
-                <p class="question">6. How can I find study centers for SSC/HSC programs in my district?</p>
-                <p>During the online application on <a href="https://osapsnew.bou.ac.bd">osapsnew.bou.ac.bd</a>, select your district to view a list of available study centers or schools. Alternatively, contact your local BOU office for a list of study centers.</p>[](https://www.bou.ac.bd/About/FAQ)
-            </div>
-            <div class="faq-section">
-                <h3>Examinations and Results</h3>
-                <p class="question">7. How can I check my exam results?</p>
-                <p>Visit <a href="https://result.bou.ac.bd">result.bou.ac.bd</a> to view published results for various programs. You can also check the Results section on <a href="https://bou.ac.bd">bou.ac.bd</a> for result news and downloadable PDF files.</p>[](https://www.bou.ac.bd/)
-                
-                <p class="question">8. I was admitted long ago, and my profile shows an active status. Can I still take exams?</p>
-                <p>Contact the OSAPS Helpline (<a href="mailto:help.osaps@bou.ac.bd">help.osaps@bou.ac.bd</a>) or your regional BOU office to confirm your eligibility and registration status for exams.</p>[](https://www.bou.ac.bd/About/FAQ)
-            </div>
-            <div class="faq-section">
-                <h3>Technical Support</h3>
-                <p class="question">9. Who should I contact for online admission or registration issues?</p>
-                <p>For issues within 15 working days, contact the OSAPS Helpline at 01618-977237 or 01907-451612 (Sunday to Friday, 8:00 AM to 4:00 PM), email <a href="mailto:help.osaps@bou.ac.bd">help.osaps@bou.ac.bd</a>, or visit your regional/sub-regional center. For specific program issues, contact the program’s designated programmer or email the ICT Head at <a href="mailto:icthead@bou.ac.bd">icthead@bou.ac.bd</a>.</p>[](https://www.bou.ac.bd/CitizenCharter/BOUPromisedService)
-            </div>
-        </div>
-    </section>
-    <!-- FOOTER -->
-    <section class="wed-hom-footer">
-        <div class="container">
-            <div class="row wed-foot-link">
-                <div class="col-md-4 foot-tc-mar-t-o">
-                    <h4>Important Links</h4>
-                    <ul>
-                        <li><a href="https://moedu.gov.bd/">Ministry of Education</a></li>
-                        <li><a href="https://x.com/bou_official">BOU Twitter/X Account</a></li>
-                        <li><a href="https://facebook.com/bouofficial">BOU FaceBook Page</a></li>
-                        <li><a href="https://instagram.com/bou_official">BOU Instagram Account</a></li>
-                        <li><a href="https://youtube.com/bouofficial">BOU Youtube Channel</a></li>
-                        <li><a href="https://boutube.bou.ac.bd/">BOU Tube</a></li>
-                        <li><a href="https://youtube.com/bouacademic">YouTube (Academic)</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="https://bou.ac.bd/resources/forms">Download Forms</a></li>
-                        <li><a href="https://bou.ac.bd/resources/bou-act-rules">BOU Act/Rules</a></li>
-                        <li><a href="https://bou.ac.bd/resources/journals-magazines">Porikroma, Magazine & Journal</a></li>
-                        <li><a href="https://bou.ac.bd/resources/ebook">BOU E-Book</a></li>
-                        <li><a href="https://bou.ac.bd/resources/journal-scientific-technological-research">Journal of Scientific and Technological Research</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h4>BOU Location Map</h4>
-                    <a href="https://bou.ac.bd/boumap">
-                        <img src="https://bou.ac.bd/fontend/images/bou_google_map.jpg" width="100%" height="70%" alt="BOU Map">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- COPY RIGHTS -->
-    <section class="wed-rights">
-        <div class="container">
-            <div class="row">
-                <div class="copy-right">
-                    <p>© 2025 Bangladesh Open University. All Rights Reserved.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- JAVASCRIPT SCRIPTS -->
-    <script src="https://bou.ac.bd/fontend/js/main.min.js"></script>
-    <script src="https://bou.ac.bd/fontend/js/bootstrap.min.js"></script>
-    <script src="https://bou.ac.bd/fontend/js/materialize.min.js"></script>
-    <script src="https://bou.ac.bd/fontend/js/custom.js"></script>
-    <script src="https://bou.ac.bd/fontend/js/aos.js"></script>
-    <script>
-        AOS.init();
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4 text-center">
+        <p>© 2025 Bangladesh Open University. All Rights Reserved.</p>
+    </footer>
+
+    <script type="module">
+        // Import the functions you need from the SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, onSnapshot, serverTimestamp, orderBy } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCjy4GrQYBzNXY1gINaL2X7KZX7mOJbObo",
+            authDomain: "bou-faq-project.firebaseapp.com",
+            projectId: "bou-faq-project",
+            storageBucket: "bou-faq-project.firebasestorage.app",
+            messagingSenderId: "1052902727608",
+            appId: "1:1052902727608:web:73fdd0ae2c4b9e5a91394d"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Toggle FAQ answer visibility
+        window.toggleAnswer = function(element) {
+            const answer = element.nextElementSibling;
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        };
+
+        // Submit a new question
+        window.submitQuestion = function() {
+            const question = document.getElementById('newQuestion').value.trim();
+            const messageDiv = document.getElementById('questionMessage');
+
+            if (question) {
+                addDoc(collection(db, 'questions'), {
+                    text: question,
+                    timestamp: serverTimestamp(),
+                    reply: null
+                }).then(() => {
+                    document.getElementById('newQuestion').value = '';
+                    messageDiv.textContent = 'Question submitted successfully!';
+                    messageDiv.className = 'text-green-500 mt-2';
+                    setTimeout(() => messageDiv.textContent = '', 3000);
+                }).catch(error => {
+                    console.error('Error submitting question:', error);
+                    messageDiv.textContent = 'Error submitting question. Please try again.';
+                    messageDiv.className = 'text-red-500 mt-2';
+                });
+            } else {
+                messageDiv.textContent = 'Please enter a question.';
+                messageDiv.className = 'text-red-500 mt-2';
+            }
+        };
+
+        // Fetch and display submitted questions
+        const questionList = document.getElementById('questionList');
+        onSnapshot(collection(db, 'questions'), orderBy('timestamp', 'desc'), (snapshot) => {
+            questionList.innerHTML = '<p class="loading">Loading questions...</p>';
+            if (snapshot.empty) {
+                questionList.innerHTML = '<p>No questions submitted yet.</p>';
+                return;
+            }
+
+            questionList.innerHTML = '';
+            snapshot.forEach(doc => {
+                const data = doc.data();
+                const entry = document.createElement('div');
+                entry.className = 'question-entry';
+                entry.innerHTML = `
+                    <p><strong>Question:</strong> ${data.text || 'N/A'}</p>
+                    <p><strong>Submitted:</strong> ${data.timestamp ? new Date(data.timestamp.toDate()).toLocaleString() : 'N/A'}</p>
+                    <p><strong>Reply:</strong> ${data.reply || 'Pending'}</p>
+                `;
+                questionList.appendChild(entry);
+            });
+        }, (error) => {
+            questionList.innerHTML = '<p class="text-red-500">Error loading questions. Please try again later.</p>';
+            console.error('Error fetching data:', error);
+        });
     </script>
-</body>
 </html>
